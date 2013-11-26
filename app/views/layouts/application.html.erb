@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JeffreyDill</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<title>
+		Jeffrey Dill
+	</title>
+	
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
+
 <body>
+	<div class="navbar navbar-inverse">
+			<div class="navbar-inner">
+			<div class="container">
+			    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+			    </a>
+		 
+		    	<!-- Be sure to leave the brand out there if you want it shown -->
+		    	<!-- <a class="brand nav-bar-heading" href="#">Jeffrey.Dill(home);</a> -->
 
-<%= yield %>
+		    	<%= link_to '[JEFFREY.DILL]', '#', :class => 'brand nav-bar-heading' %>
+		 
+		    	<!-- Everything you want hidden at 940px or less, place within here -->
+		    	<div class="nav-collapse collapse nav-bar-heading">
+		    		<!-- .nav, .navbar-search, .navbar-form, etc -->
+					<ul class="nav">
+		    			<li>
+							<%= link_to ':THE PERSONAL', '#' %>
+						</li>
 
+		    			<li>
+		    				<%= link_to ':THE PROFESSIONAL', '#' %>
+					    </li>
+					</ul>
+
+		    	</div>
+		    </div>
+		</div>
+	</div>
+
+	<%= yield %>
 </body>
 </html>
