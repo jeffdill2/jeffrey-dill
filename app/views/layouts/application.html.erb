@@ -23,18 +23,18 @@
 		    	<!-- Be sure to leave the brand out there if you want it shown -->
 		    	<!-- <a class="brand nav-bar-heading" href="#">Jeffrey.Dill(home);</a> -->
 
-		    	<%= link_to '[JEFFREY.DILL]', '#', :class => 'brand nav-bar-heading' %>
+		    	<%= link_to '[JEFFREY.DILL]', home_pages_path, :class => 'brand nav-bar-heading' %>
 		 
 		    	<!-- Everything you want hidden at 940px or less, place within here -->
 		    	<div class="nav-collapse collapse nav-bar-heading">
 		    		<!-- .nav, .navbar-search, .navbar-form, etc -->
 					<ul class="nav">
 		    			<li>
-							<%= link_to ':THE PERSONAL', '#' %>
+							<%= link_to ':THE PERSONAL', personal_pages_path %>
 						</li>
 
 		    			<li>
-		    				<%= link_to ':THE PROFESSIONAL', '#' %>
+		    				<%= link_to ':THE PROFESSIONAL', professional_pages_path %>
 					    </li>
 					</ul>
 
