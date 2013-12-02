@@ -38,7 +38,7 @@ body
 
 .nav-bar-heading
 {
-	font-family: Futura, sans-serif;
+	font-family: menlo_font, sans-serif;
 	font-weight: 100;
 	font-size: 20px;
 	color: white;
@@ -47,7 +47,7 @@ body
 
 .styled-h1
 {
-	font-family: Futura, sans-serif;
+	font-family: menlo_font, sans-serif;
 	font-weight: 100;
 	font-size: 60px;
 	color: white;
@@ -57,9 +57,21 @@ body
 
 .styled-h2
 {
-	font-family: Futura, sans-serif;
+	font-family: menlo_font, sans-serif;
 	font-weight: 100;
 	font-size: 30px;
 	color: white;
 	line-height: 40px;
+}
+
+@font-face
+{
+	font-family: futura_font;
+	src: local(futura_font), url('futura.ttc') format('opentype');
+}
+
+@font-face
+{
+	font-family: menlo_font;
+	src: local(menlo_font), url('fonts/menlo.ttc') format('opentype');
 }

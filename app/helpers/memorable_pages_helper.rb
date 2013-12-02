@@ -1,0 +1,2 @@
+module MemorablePagesHelper
+end
