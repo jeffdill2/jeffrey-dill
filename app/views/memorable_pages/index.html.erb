@@ -1,5 +1,19 @@
-<h1 class="styled-h1">
-	<span style="font-size: 20px">
-		THIS IS THE MEMORABLE PAGE!
-	</span>
-</h1>
+<% @memories.each do |memory| %>
+	<div class="transparent-mint-green-box span4 text-center">
+		<h1 class="styled-h1">
+			Subject: <%= memory.subject %>
+		</h1>
+		
+		<br/>
+
+		<h2 class="styled-h2">
+			Description: <%= memory.description %>
+		</h2>
+
+		<br/>
+
+		<h2 class="styles-h2">
+			Date: <%= memory.date %>
+		</h2>
+	</div>
+<% end %>
