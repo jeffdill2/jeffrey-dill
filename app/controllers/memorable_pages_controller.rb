@@ -4,6 +4,7 @@ require "uri"
 class MemorablePagesController < ApplicationController
 
 	def index
+<<<<<<< HEAD
 		incoming_url = request.referer
 		encoded_url = URI.encode(incoming_url)
 		#@incoming_url_params = CGI.parse(URI.parse(incoming_url).query)
@@ -11,9 +12,9 @@ class MemorablePagesController < ApplicationController
 
 		@memories = MemorableInfo.all
 	end
+=======
+>>>>>>> parent of 56387f1... Created the table for the Memorable page
 
-	def memory_params
-		params.require(:memory).permit(:subject, :description, :image, :date)
 	end
 	
 end
