@@ -8,11 +8,15 @@
 
 body
 {
+	/*
 	background: url('wood_grain_02.jpg') no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	*/
+
+	background-color: #EFF5FB;
 }
 
 .transparent-grey-box
@@ -29,10 +33,10 @@ body
 	padding: 1%;
 }
 
-.transparent-steel-blue-box
+.transparent-soft-blue-box
 {
-	box-shadow: 2px -2px 2px 2px rgba(20,80,150,0.25);
-	background-color: rgba(20,80,150,0.25);
+	box-shadow: 2px -2px 2px 2px rgba(40,120,150,0.25);
+	background-color: rgba(40,120,150,0.25);
 	padding: 1%;
 }
 
@@ -50,7 +54,7 @@ body
 	font-family: Arial, sans-serif;
 	font-weight: 100;
 	font-size: 60px;
-	color: white;
+	color: #0B4C5F;
 	line-height: 70px;
 
 }
@@ -60,7 +64,7 @@ body
 	font-family: Arial, sans-serif;
 	font-weight: 100;
 	font-size: 30px;
-	color: white;
+	color: #457FA4;
 	line-height: 40px;
 }
 
