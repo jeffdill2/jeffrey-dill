@@ -1,5 +1,33 @@
-<h1 class="styled-h1">
-	<span style="font-size: 20px">
-		THIS IS THE PERSONAL PAGE!
-	</span>
+<h1 class="styled-h1-paragraph">
+	About Me
+	</br>
+	<hr style="height: 4px; " />
+	</br>
+	Hi! I'm Jeff.
+	</br>
+	This is my personal website!
+
+	<br/>
+
+	<% 3.times do |i| %>
+	    </br>
+	<% end %>
+
+	<%= link_to "Let's Get Professional...", professional_pages_path, :class => 'btn btn-info btn-medium' %>
+
+	<% 3.times do |i| %>
+	    </br>
+	<% end %>
+
+	<a href="http://www.twitter.com/jeffdill2" target="#">
+		<%= image_tag "twitter-48-black.png"%>
+	</a>
+
+	<a href="http://www.linkedin.com/profile/view?id=59054351" target="#">
+		<%= image_tag "linkedin-48-black.png"%>
+	</a>
+
+	<a href="https://github.com/jeffdill2" target="#">
+		<%= image_tag "github-48-black.png"%>
+	</a>
 </h1>

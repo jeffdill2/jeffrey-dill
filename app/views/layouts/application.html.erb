@@ -11,19 +11,19 @@
 </head>
 
 <body>
-	<div class="navbar navbar-inverse">
+	<div class="navbar navbar-inverse navbar-header">
 			<div class="navbar-inner">
 			<div class="container">
-			    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-			    </a>
-		 
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
 		    	<!-- Be sure to leave the brand out there if you want it shown -->
 		    	<!-- <a class="brand nav-bar-heading" href="#">Jeffrey.Dill(home);</a> -->
 
-			    <%= link_to '[JEFFREY.DILL]', home_pages_path, :class => 'brand' %>
+				<%= link_to '[JEFFREY.DILL]', root_path, :class => 'brand' %>
 		 
 		    	<!-- Everything you want hidden at 940px or less, place within here -->
 		    	<div class="nav-collapse collapse">
