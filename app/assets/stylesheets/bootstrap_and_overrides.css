@@ -19,7 +19,8 @@
 	width: 1000px;
 	overflow: hidden;
 	margin: 50px auto;
-	background: white;
+	/*background: white;*/
+	background-color: #EFF5FB;
 }
 
 .photobanner
@@ -27,6 +28,7 @@
 	height: 233px;
 	width: 3550px;
 	margin-bottom: 80px;
+	opacity: 0.7;
 }
 
 .first
@@ -144,23 +146,24 @@ a:hover
 	line-height: 70px;
 }
 
-.styled-h1-paragraph
-{
-	font-family: Arial, sans-serif;
-	font-weight: 100;
-	font-size: 20px;
-	color: #0B4C5F;
-	line-height: 25px;
-	padding-left: 10px;
-}
-
 .styled-h2
 {
 	font-family: Arial, sans-serif;
 	font-weight: 100;
 	font-size: 30px;
 	color: #457FA4;
-	line-height: 40px;
+	line-height: 35px;
+	padding-left: 10px;
+}
+
+.styled-paragraph
+{
+	font-family: Arial, sans-serif;
+	font-weight: 100;
+	font-size: 18px;
+	color: #0B4C5F;
+	line-height: 20px;
+	padding-left: 10px;
 }
 
 .navbar-home-page-header
