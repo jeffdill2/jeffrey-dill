@@ -1,35 +1,80 @@
-<h2 class="styled-h2">
-	About Me
-</h2>
+<!DOCTYPE html>
+<html>
+<body>
+	<head>
+		<%= provide(:title, 'The Personal') %>
 
-<div class="styled-paragraph">
-	<hr style="height: 4px; width: 800px; " />
-	</br>&nbsp;
+		<script>
+			function loadXMLDoc()
+			{
+				//alert("loadXMLDoc running.");
 
-	Hi! I'm Jeff.
-	</br>&nbsp;
-	This is my personal website!
-</div>
-	
+				var xmlhttp;
 
-<% 3.times do |i| %>
-    </br>&nbsp;
-<% end %>
+				if (window.XMLHttpRequest)
+		  		{
+		  			xmlhttp = new XMLHttpRequest();
+		  		}
+				else
+		  		{
+		  			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		  		}
+				
+				xmlhttp.onreadystatechange = function()
+		  		{
+		  			//alert(xmlhttp.readyState + " - " + xmlhttp.status);
 
-<%= link_to "Let's Get Professional...", professional_pages_path, :class => 'btn btn-info btn-medium' %>
+		  			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+		    		{
+		    			//alert("AJAX call successful");
+		    			document.getElementById("divAboutMe").innerHTML = xmlhttp.responseText;
+		    		}
+				}
+				
+				xmlhttp.overrideMimeType('text/plain');
+				xmlhttp.open("GET", "http://www.mozilla.org/", false);
+				xmlhttp.send();
+			}
+		</script>
+	</head>
 
-<% 3.times do |i| %>
-    </br>&nbsp;
-<% end %>
+	<div id="divAboutMe">
+		<h2 class="styled-h2">
+			About Me...
+		</h2>
+	</div>
 
-<a href="http://www.twitter.com/jeffdill2" target="#">
-	<%= image_tag "twitter-48-black.png"%>
-</a>
+	<div class="styled-paragraph">
+		<hr style="height: 4px; width: 800px; " />
+		</br>&nbsp;
 
-<a href="http://www.linkedin.com/profile/view?id=59054351" target="#">
-	<%= image_tag "linkedin-48-black.png"%>
-</a>
+		Hi! I'm Jeff.
+		</br>&nbsp;
+		This is my personal website!
+	</div>
 
-<a href="https://github.com/jeffdill2" target="#">
-	<%= image_tag "github-48-black.png"%>
-</a>
+	<%= link_to "Who Am I?...", "#", :onclick => "loadXMLDoc()", :class => "btn btn-info btn-medium" %>
+
+	<% 3.times do |i| %>
+	    </br>&nbsp;
+	<% end %>
+
+	<%= link_to "Let's Get Professional...", professional_pages_path, :class => "btn btn-info btn-medium" %>
+
+	<% 3.times do |i| %>
+	    </br>&nbsp;
+	<% end %>
+
+	<a href="http://www.twitter.com/jeffdill2" target="#">
+		<%= image_tag "twitter-48-black.png"%>
+	</a>
+
+	<a href="http://www.linkedin.com/profile/view?id=59054351" target="#">
+		<%= image_tag "linkedin-48-black.png"%>
+	</a>
+
+	<a href="https://github.com/jeffdill2" target="#">
+		<%= image_tag "github-48-black.png"%>
+	</a>
+</body>
+</html>
