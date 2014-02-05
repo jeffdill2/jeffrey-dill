@@ -13,6 +13,8 @@ JeffreyDill::Application.routes.draw do
 
   resources :memorable_pages
 
+  resources :testing
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

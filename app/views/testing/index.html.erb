@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function loadXMLDoc()
+			{
+				//alert("loadXMLDoc running.");
+
+				var xmlhttp;
+
+				if (window.XMLHttpRequest)
+		  		{
+		  			xmlhttp = new XMLHttpRequest();
+		  		}
+				else
+		  		{
+		  			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		  		}
+				
+				xmlhttp.onreadystatechange = function()
+		  		{
+		  			//alert(xmlhttp.readyState + " - " + xmlhttp.status);
+
+		  			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+		    		{
+		    			//alert("AJAX call successful");
+		    			document.getElementById("divAboutMe").innerHTML = xmlhttp.responseText;
+		    		}
+				}
+				
+				xmlhttp.overrideMimeType('text/plain');
+				xmlhttp.open("GET", "http://www.mozilla.org/", false);
+				xmlhttp.send();
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+		    <div class="photobanner">
+		        <%= image_tag "CNN_Award.png", :class => "first", :width => "233px", :height => "350px" %>
+		        <%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
+		        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
+				<%= image_tag "CNN_Award.png", :width => "233px", :height => "350px" %>
+				<%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
+		        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
+		        <%= image_tag "CNN_Award.png", :width => "233px", :height => "350px" %>
+				<%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
+		        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
+		        <%= image_tag "CNN_Award.png", :width => "233px", :height => "350px" %>
+				<%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
+		        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
+		        <%= image_tag "CNN_Award.png", :width => "233px", :height => "350px" %>
+				<%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
+		        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
+		    </div>
+		</div>
+
+
+
+
+
+
+		<div id="container">
+		    <div class="photobanner">
+		        <div class="transparent-soft-blue-box text-center first" style="width: 233px; height: 350px; ">
+					<h1 class="styled-h1">
+						Welcome!
+					</h1>
+
+					<h2 class="styled-h2">
+						Your #1 source for all things Jeffrey Dill-related!
+					</h2>
+
+					<%= link_to 'Come On In!', personal_pages_path, :class => 'btn btn-info btn-large' %>
+				</div>
+
+				<div class="transparent-soft-blue-box text-center" style="width: 233px; height: 350px; ">
+					<h1 class="styled-h1">
+						Welcome!
+					</h1>
+
+					<h2 class="styled-h2">
+						Your #1 source for all things Jeffrey Dill-related!
+					</h2>
+
+					<%= link_to 'Come On In!', personal_pages_path, :class => 'btn btn-info btn-large' %>
+				</div>
+
+				<div class="transparent-soft-blue-box text-center" style="width: 233px; height: 350px; ">
+					<h1 class="styled-h1">
+						Welcome!
+					</h1>
+
+					<h2 class="styled-h2">
+						Your #1 source for all things Jeffrey Dill-related!
+					</h2>
+
+					<%= link_to 'Come On In!', personal_pages_path, :class => 'btn btn-info btn-large' %>
+				</div>
+
+				<div class="transparent-soft-blue-box text-center" style="width: 233px; height: 350px; ">
+					<h1 class="styled-h1">
+						Welcome!
+					</h1>
+
+					<h2 class="styled-h2">
+						Your #1 source for all things Jeffrey Dill-related!
+					</h2>
+
+					<%= link_to 'Come On In!', personal_pages_path, :class => 'btn btn-info btn-large' %>
+				</div>
+
+				<div class="transparent-soft-blue-box text-center" style="width: 233px; height: 350px; ">
+					<h1 class="styled-h1">
+						Welcome!
+					</h1>
+
+					<h2 class="styled-h2">
+						Your #1 source for all things Jeffrey Dill-related!
+					</h2>
+
+					<%= link_to 'Come On In!', personal_pages_path, :class => 'btn btn-info btn-large' %>
+				</div>
+		    </div>
+		</div>
+
+
+
+
+
+
+
+
+
+		<%= link_to "Who Am I?...", "#", :onclick => "loadXMLDoc()", :class => "btn btn-info btn-medium" %>
+	</body>
+</html>

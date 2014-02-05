@@ -1,64 +1,101 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>
-		<%= full_title(yield(:title)) %>
-	</title>
-	
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-	<%= csrf_meta_tags %>
-</head>
+	<head>
+		<!--//////////////////////////////////////////////
+		/////////////////////////////// DYNAMIC PAGE TITLE
+		///////////////////////////////////////////////-->
+		<title>
+			<%= full_title(yield(:title)) %>
+		</title>
+		
+		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+	</head>
 
-<body>
-	<div class="navbar navbar-inverse navbar-header">
+	<body>
+		<!--//////////////////////////////////////////////
+		//////////////////////////// CONSISTENT HEADER BAR
+		///////////////////////////////////////////////-->
+		<div class="navbar navbar-inverse navbar-header">
 			<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+
+			    	<!-- Be sure to leave the brand out there if you want it shown -->
+			    	<!-- <a class="brand nav-bar-heading" href="#">Jeffrey.Dill(home);</a> -->
+
+					<%= link_to '[JEFFREY.DILL]', root_path, :class => 'brand' %>
+			 
+			    	<!-- Everything you want hidden at 940px or less, place within here -->
+			    	<div class="nav-collapse collapse">
+			    		<!-- .nav, .navbar-search, .navbar-form, etc -->
+						<ul class="nav">
+			    			<li>
+								<%= link_to ':THE PERSONAL', personal_pages_path %>
+							</li>
+
+			    			<li>
+			    				<%= link_to ':THE PROFESSIONAL', professional_pages_path %>
+						    </li>
+
+						    <li>
+						    	<%= link_to ':THE MEMORABLE', memorable_pages_path %>
+						    </li>
+						</ul>
+
+			    	</div>
+			    </div>
+			</div>
+		</div>
+
+		<!--//////////////////////////////////////////////
+		/////////////////////////////////// YIELDING PAGES
+		///////////////////////////////////////////////-->
+		<div class="wrapper">
+			<%= yield %>
+
+			<div class="push"></div>
+		</div>
+
+		<!--//////////////////////////////////////////////
+		/////////////////// CONSISTENT SOCIAL MEDIA FOOTER
+		///////////////////////////////////////////////-->
+		<br/>&nbsp;
+
+		<div class="footer">
+			<div style="margin-left: 22px; padding-top: 5px; ">
+				<a href="http://www.twitter.com/jeffdill2" target="#">
+					<%= image_tag "twitter-48-black.png"%>
 				</a>
 
-		    	<!-- Be sure to leave the brand out there if you want it shown -->
-		    	<!-- <a class="brand nav-bar-heading" href="#">Jeffrey.Dill(home);</a> -->
+				<a href="http://www.linkedin.com/profile/view?id=59054351" target="#">
+					<%= image_tag "linkedin-48-black.png"%>
+				</a>
 
-				<%= link_to '[JEFFREY.DILL]', root_path, :class => 'brand' %>
-		 
-		    	<!-- Everything you want hidden at 940px or less, place within here -->
-		    	<div class="nav-collapse collapse">
-		    		<!-- .nav, .navbar-search, .navbar-form, etc -->
-					<ul class="nav">
-		    			<li>
-							<%= link_to ':THE PERSONAL', personal_pages_path %>
-						</li>
-
-		    			<li>
-		    				<%= link_to ':THE PROFESSIONAL', professional_pages_path %>
-					    </li>
-
-					    <li>
-					    	<%= link_to ':THE MEMORABLE', memorable_pages_path %>
-					    </li>
-					</ul>
-
-		    	</div>
-		    </div>
+				<a href="https://github.com/jeffdill2" target="#">
+					<%= image_tag "github-48-black.png"%>
+				</a>
+			</div>
 		</div>
-	</div>
 
-	<%= yield %>
+		<!--//////////////////////////////////////////////
+		///////////////////////////////// GOOGLE ANALYTICS
+		///////////////////////////////////////////////-->
+		<% unless Rails.env.development? %>
+			<script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	<% unless Rails.env.development? %>
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-46472596-1', 'jeffreydill.com');
-			ga('send', 'pageview');
-		</script>
-	<% end %>
-</body>
+				ga('create', 'UA-46472596-1', 'jeffreydill.com');
+				ga('send', 'pageview');
+			</script>
+		<% end %>
+	</body>
 </html>

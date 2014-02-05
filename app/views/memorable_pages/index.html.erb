@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<body>
 	<head>
 		<%= provide(:title, 'The Memorable') %>
 	</head>
 
-	<% @memories.each do |memory| %>
-		<div class="transparent-soft-blue-box span4 text-center">
-			<h1 class="styled-h1">
-				Subject: <%= memory.subject %>
-				URL: <%= @incoming_url_params %>
-			</h1>
-			
-			<br/>
+	<body>
+		<% @memories.each do |memory| %>
+			<div class="transparent-soft-blue-box span4 text-center">
+				<h1 class="styled-h1">
+					Subject: <%= memory.subject %>
+					URL: <%= @incoming_url_params %>
+				</h1>
+				
+				<br/>
 
-			<h2 class="styled-h2">
-				Description: <%= memory.description %>
-			</h2>
+				<h2 class="styled-h2">
+					Description: <%= memory.description %>
+				</h2>
 
-			<br/>
+				<br/>
 
-			<h2 class="styles-h2">
-				Date: <%= memory.date %>
-			</h2>
-		</div>
-	<% end %>
-</body>
+				<h2 class="styles-h2">
+					Date: <%= memory.date %>
+				</h2>
+			</div>
+		<% end %>
+	</body>
 </html>

@@ -1,80 +1,34 @@
 <!DOCTYPE html>
 <html>
-<body>
 	<head>
 		<%= provide(:title, 'The Personal') %>
-
-		<script>
-			function loadXMLDoc()
-			{
-				//alert("loadXMLDoc running.");
-
-				var xmlhttp;
-
-				if (window.XMLHttpRequest)
-		  		{
-		  			xmlhttp = new XMLHttpRequest();
-		  		}
-				else
-		  		{
-		  			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-		  		}
-				
-				xmlhttp.onreadystatechange = function()
-		  		{
-		  			//alert(xmlhttp.readyState + " - " + xmlhttp.status);
-
-		  			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-		    		{
-		    			//alert("AJAX call successful");
-		    			document.getElementById("divAboutMe").innerHTML = xmlhttp.responseText;
-		    		}
-				}
-				
-				xmlhttp.overrideMimeType('text/plain');
-				xmlhttp.open("GET", "http://www.mozilla.org/", false);
-				xmlhttp.send();
-			}
-		</script>
 	</head>
+	
+	<body>
+		<div class="section-background">
+			<div class="header-background">
+				<h2 class="styled-h2">
+					About Me
+				</h2>
+			</div>
 
-	<div id="divAboutMe">
-		<h2 class="styled-h2">
-			About Me...
-		</h2>
-	</div>
+			<div class="styled-paragraph">
+				</br>&nbsp;
 
-	<div class="styled-paragraph">
-		<hr style="height: 4px; width: 800px; " />
-		</br>&nbsp;
+				Hi! I'm Jeff.
+				</br>&nbsp;
+				This is my personal website!
+			</div>
 
-		Hi! I'm Jeff.
-		</br>&nbsp;
-		This is my personal website!
-	</div>
+			<% 3.times do |i| %>
+			    </br>&nbsp;
+			<% end %>
 
-	<%= link_to "Who Am I?...", "#", :onclick => "loadXMLDoc()", :class => "btn btn-info btn-medium" %>
+			<%= link_to "Let's Get Professional...", professional_pages_path, :class => "btn btn-info btn-medium" %>
 
-	<% 3.times do |i| %>
-	    </br>&nbsp;
-	<% end %>
-
-	<%= link_to "Let's Get Professional...", professional_pages_path, :class => "btn btn-info btn-medium" %>
-
-	<% 3.times do |i| %>
-	    </br>&nbsp;
-	<% end %>
-
-	<a href="http://www.twitter.com/jeffdill2" target="#">
-		<%= image_tag "twitter-48-black.png"%>
-	</a>
-
-	<a href="http://www.linkedin.com/profile/view?id=59054351" target="#">
-		<%= image_tag "linkedin-48-black.png"%>
-	</a>
-
-	<a href="https://github.com/jeffdill2" target="#">
-		<%= image_tag "github-48-black.png"%>
-	</a>
-</body>
+			<% 3.times do |i| %>
+			    </br>&nbsp;
+			<% end %>
+		</div>
+	</body>
 </html>

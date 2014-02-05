@@ -1,56 +1,26 @@
 <!DOCTYPE html>
 <html>
-<body>
 	<head>
 		<%= provide(:title, 'Home') %>
-
-		<script type="text/javascript">
-			$(window).load(function(){
-			  $('#slider').ramblingSlider();
-			});
-		</script>
 	</head>
 
-	<div class="transparent-soft-blue-box span8 offset3 text-center">
+	<body>
+		<div class="transparent-soft-blue-box span8 offset3 text-center">
 
-		<h1 class="styled-h1">
-			Welcome!
-		</h1>
+			<h1 class="styled-h1">
+				Welcome!
+			</h1>
 
-		<br/>
+			<br />
 
-		<h2 class="styled-h2">
-			Your #1 source for all things Jeffrey Dill-related!
-		</h2>
+			<h2 class="styled-h2">
+				Thanks for visiting my site!
+			</h2>
 
-		<br/>
-		<br/>
+			<br />
+			<br />
 
-		<%= link_to 'Come On In!', personal_pages_path, :class => 'btn btn-info btn-large' %>
-	</div>
-
-	<% 13.times do |i| %>
-	    <br/>
-	<% end %>
-
-	<div id="container">
-	    <div class="photobanner">
-	        <%= image_tag "CNN_Award.png", :class => "first", :width => "233px", :height => "350px" %>
-	        <%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
-	        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
-			<%= image_tag "CNN_Award.png", :width => "233px", :height => "350px" %>
-			<%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
-	        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
-	        <%= image_tag "CNN_Award.png", :width => "233px", :height => "350px" %>
-			<%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
-	        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
-	        <%= image_tag "CNN_Award.png", :width => "233px", :height => "350px" %>
-			<%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
-	        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
-	        <%= image_tag "CNN_Award.png", :width => "233px", :height => "350px" %>
-			<%= image_tag "Fox_News_Award.png", :width => "233px", :height => "350px" %>
-	        <%= image_tag "NYT_Award.png", :width => "233px", :height => "350px" %>
-	    </div>
-	</div>
-</body>
+			<%= link_to 'Come On In!', personal_pages_path, :class => 'btn btn-info btn-large' %>
+		</div>
+	</body>
 </html>

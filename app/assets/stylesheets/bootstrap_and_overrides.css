@@ -8,9 +8,9 @@
 
 
 /*
-/////////////////////////////////////////////////////////////
-///////////////////////////////////// SCROLLING PHOTO BANNNER
-/////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+//////////////////////////////////// SCROLLING PHOTO BANNNER
+////////////////////////////////////////////////////////////
 */
 * {margin: 0; padding: 0;}
 
@@ -85,12 +85,16 @@
 	}
 }
 
-/*//////////////////////////////////////////////////////////*/
-/*//////////////////////////////////////////////////////////*/
-/*//////////////////////////////////////////////////////////*/
+/*
+////////////////////////////////////////////////////////////
+////////////////////////////////////////// MISCELLANEOUS CSS
+////////////////////////////////////////////////////////////
+*/
 
-body
+html, body
 {
+	background-color: #EFF5FB;
+	height: 100%;
 	/*
 	background: url('wood_grain_02.jpg') no-repeat center center fixed; 
 	-webkit-background-size: cover;
@@ -98,8 +102,28 @@ body
 	-o-background-size: cover;
 	background-size: cover;
 	*/
+}
 
-	background-color: #EFF5FB;
+.wrapper
+{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+.footer
+{
+	height: 4em;
+	width: 200px;
+	margin-top: 30px;
+	margin: 0 auto;
+	background-color: rgba(165,183,196,0.25);
+}
+
+.push
+{
+	height: 4em;
 }
 
 a:hover
@@ -139,8 +163,8 @@ a:hover
 
 .styled-h1
 {
-	font-family: Arial, sans-serif;
-	font-weight: 100;
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
 	font-size: 50px;
 	color: #0B4C5F;
 	line-height: 70px;
@@ -148,8 +172,8 @@ a:hover
 
 .styled-h2
 {
-	font-family: Arial, sans-serif;
-	font-weight: 100;
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
 	font-size: 30px;
 	color: #457FA4;
 	line-height: 35px;
@@ -158,7 +182,7 @@ a:hover
 
 .styled-paragraph
 {
-	font-family: Arial, sans-serif;
+	font-family: Helvetica, sans-serif;
 	font-weight: 100;
 	font-size: 18px;
 	color: #0B4C5F;
@@ -171,18 +195,25 @@ a:hover
 	font-size: 6px;
 }
 
-/*
-@font-face
+.section-background
 {
-	font-family: futura_font;
-	src: local(futura_font), url('futura.ttc') format('opentype');
+	padding-left: 20px;
+	padding-top: 20px;
+	background-color: rgba(165,183,196,0.25);
+	width: 700px;
+	height: auto;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin: 0 auto;
 }
-*/
 
-/*
-@font-face
+.header-background
 {
-	font-family: menlo_font;
-	src: local(menlo_font), url('fonts/menlo.ttc') format('opentype');
+	padding-left: 20px;
+	padding-top: 6px;
+	background-color: #EFF5FB;
+	width: 700px;
+	height: 60px;
+	margin-left: 10px;
+	margin-top: 10px;
 }
-*/
