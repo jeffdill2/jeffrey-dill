@@ -6,7 +6,6 @@
 	=require twitter-bootstrap-static/fontawesome
 */
 
-
 /*
 ////////////////////////////////////////////////////////////
 //////////////////////////////////// SCROLLING PHOTO BANNNER
@@ -40,47 +39,62 @@
             animation: bannermove 30s linear infinite;
 }
  
-@keyframes "bannermove" {
-	0% {
+@keyframes "bannermove"
+{
+	0%
+	{
 		margin-left: 0px;
 	}
-	100% {
+	100%
+	{
 		margin-left: -2125px;
 	}
 }
  
-@-moz-keyframes bannermove {
-	0% {
+@-moz-keyframes bannermove
+{
+	0%
+	{
 		margin-left: 0px;
 	}
-	100% {
+	100%
+	{
 		margin-left: -2125px;
 	}
 }
  
-@-webkit-keyframes "bannermove" {
-	0% {
+@-webkit-keyframes "bannermove"
+{
+	0%
+	{
 		margin-left: 0px;
 	}
-	100% {
+	100%
+	{
 		margin-left: -2125px;
 	}
 }
  
-@-ms-keyframes "bannermove" {
-	0% {
+@-ms-keyframes "bannermove"
+{
+	0%
+	{
 		margin-left: 0px;
 	}
-	100% {
+	100%
+	{
 		margin-left: -2125px;
 	}
 }
  
-@-o-keyframes "bannermove" {
-	0% {
+@-o-keyframes "bannermove"
+{
+	0%
+	{
 		margin-left: 0px;
 	}
-	100% {
+	100%
+	{
 		margin-left: -2125px;
 	}
 }
@@ -154,8 +168,8 @@ a:hover
 
 .navbar-header
 {
-	font-family: Arial, sans-serif;
-	font-weight: 100;
+	font-family: 'blackout2_am';
+	font-weight: bold;
 	font-size: 15px;
 	color: white;
 	line-height: 20px;
@@ -163,7 +177,7 @@ a:hover
 
 .styled-h1
 {
-	font-family: Helvetica, sans-serif;
+	font-family: 'blackout2_am';
 	font-weight: bold;
 	font-size: 50px;
 	color: #0B4C5F;
@@ -172,7 +186,7 @@ a:hover
 
 .styled-h2
 {
-	font-family: Helvetica, sans-serif;
+	font-family: 'blackout2_am';
 	font-weight: bold;
 	font-size: 30px;
 	color: #457FA4;
@@ -182,8 +196,8 @@ a:hover
 
 .styled-paragraph
 {
-	font-family: Helvetica, sans-serif;
-	font-weight: 100;
+	font-family: 'blackout2_am';
+	font-weight: normal;
 	font-size: 18px;
 	color: #0B4C5F;
 	line-height: 20px;

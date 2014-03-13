@@ -11,6 +11,8 @@
 		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= csrf_meta_tags %>
+
+		<link href='http://fonts.googleapis.com/css?family=Monofett|Inconsolata:400,700|Metrophobic|Share+Tech+Mono|Roboto:500|Ewert' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
@@ -27,24 +29,26 @@
 					</a>
 
 			    	<!-- Be sure to leave the brand out there if you want it shown -->
-			    	<!-- <a class="brand nav-bar-heading" href="#">Jeffrey.Dill(home);</a> -->
+			    	<!-- <a class="brand nav-bar-heading" href="<%= root_path %>">Jeffrey.Dill(home);</a> -->
 
-					<%= link_to '[JEFFREY.DILL]', root_path, :class => 'brand' %>
+					<span class="brand" style="font-size: 25px; margin-right: -16px; margin-top: -3px; ">[</span>
+					<%= link_to 'JEFFREY.DILL', root_path, :class => 'brand nav-bar-heading' %>
+					<span class="brand" style="font-size: 25px; margin-left: -35px; margin-top: -3px; ">]</span>
 			 
 			    	<!-- Everything you want hidden at 940px or less, place within here -->
 			    	<div class="nav-collapse collapse">
 			    		<!-- .nav, .navbar-search, .navbar-form, etc -->
-						<ul class="nav">
+						<ul class="nav styled-h2">
 			    			<li>
-								<%= link_to ':THE PERSONAL', personal_pages_path %>
+								<%= link_to ':THE_PERSONAL', personal_pages_path %>
 							</li>
 
 			    			<li>
-			    				<%= link_to ':THE PROFESSIONAL', professional_pages_path %>
+			    				<%= link_to ':THE_PROFESSIONAL', professional_pages_path %>
 						    </li>
 
 						    <li>
-						    	<%= link_to ':THE MEMORABLE', memorable_pages_path %>
+						    	<%= link_to ':THE_MEMORABLE', memorable_pages_path %>
 						    </li>
 						</ul>
 
