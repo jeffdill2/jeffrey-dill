@@ -1,105 +1,105 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!--//////////////////////////////////////////////
-		/////////////////////////////// DYNAMIC PAGE TITLE
-		///////////////////////////////////////////////-->
-		<title>
-			<%= full_title(yield(:title)) %>
-		</title>
-		
-		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-		<%= csrf_meta_tags %>
+  <head>
+    <!--//////////////////////////////////////////////
+    /////////////////////////////// DYNAMIC PAGE TITLE
+    ///////////////////////////////////////////////-->
+    <title>
+      <%= full_title(yield(:title)) %>
+    </title>
+    
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
 
-		<link href='http://fonts.googleapis.com/css?family=Monofett|Inconsolata:400,700|Metrophobic|Share+Tech+Mono|Roboto:500|Ewert' rel='stylesheet' type='text/css'>
-	</head>
+    <link href='http://fonts.googleapis.com/css?family=Monofett|Inconsolata:400,700|Metrophobic|Share+Tech+Mono|Roboto:500|Ewert|Ubuntu+Mono' rel='stylesheet' type='text/css'>
+  </head>
 
-	<body>
-		<!--//////////////////////////////////////////////
-		//////////////////////////// CONSISTENT HEADER BAR
-		///////////////////////////////////////////////-->
-		<div class="navbar navbar-inverse navbar-header">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</a>
+  <body>
+    <!--//////////////////////////////////////////////
+    //////////////////////////// CONSISTENT HEADER BAR
+    ///////////////////////////////////////////////-->
+    <div class="navbar navbar-inverse navbar-header">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
 
-			    	<!-- Be sure to leave the brand out there if you want it shown -->
-			    	<!-- <a class="brand nav-bar-heading" href="<%= root_path %>">Jeffrey.Dill(home);</a> -->
+            <!-- Be sure to leave the brand out there if you want it shown -->
+            <!-- <a class="brand nav-bar-heading" href="<%= root_path %>">Jeffrey.Dill(home);</a> -->
 
-					<span class="brand" style="font-size: 25px; margin-right: -16px; margin-top: -3px; ">[</span>
-					<%= link_to 'JEFFREY.DILL', root_path, :class => 'brand nav-bar-heading' %>
-					<span class="brand" style="font-size: 25px; margin-left: -35px; margin-top: -3px; ">]</span>
-			 
-			    	<!-- Everything you want hidden at 940px or less, place within here -->
-			    	<div class="nav-collapse collapse">
-			    		<!-- .nav, .navbar-search, .navbar-form, etc -->
-						<ul class="nav styled-h2">
-			    			<li>
-								<%= link_to ':THE_PERSONAL', personal_pages_path %>
-							</li>
+          <span class="brand" style="font-size: 25px; margin-right: -16px; margin-top: -3px; ">[</span>
+          <%= link_to 'JEFFREY.DILL', root_path, :class => 'brand' %>
+          <span class="brand" style="font-size: 25px; margin-left: -35px; margin-top: -3px; ">]</span>
+       
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+              <!-- .nav, .navbar-search, .navbar-form, etc -->
+            <ul class="nav">
+                <li>
+                <%= link_to ':THE_PERSONAL', personal_pages_path %>
+              </li>
 
-			    			<li>
-			    				<%= link_to ':THE_PROFESSIONAL', professional_pages_path %>
-						    </li>
+                <li>
+                  <%= link_to ':THE_PROFESSIONAL', professional_pages_path %>
+                </li>
 
-						    <li>
-						    	<%= link_to ':THE_MEMORABLE', memorable_pages_path %>
-						    </li>
-						</ul>
+                <li>
+                  <%= link_to ':THE_MEMORABLE', memorable_pages_path %>
+                </li>
+            </ul>
 
-			    	</div>
-			    </div>
-			</div>
-		</div>
+            </div>
+          </div>
+      </div>
+    </div>
 
-		<!--//////////////////////////////////////////////
-		/////////////////////////////////// YIELDING PAGES
-		///////////////////////////////////////////////-->
-		<div class="wrapper">
-			<%= yield %>
+    <!--//////////////////////////////////////////////
+    /////////////////////////////////// YIELDING PAGES
+    ///////////////////////////////////////////////-->
+    <div class="wrapper">
+      <%= yield %>
 
-			<div class="push"></div>
-		</div>
+      <div class="push"></div>
+    </div>
 
-		<!--//////////////////////////////////////////////
-		/////////////////// CONSISTENT SOCIAL MEDIA FOOTER
-		///////////////////////////////////////////////-->
-		<br/>&nbsp;
+    <!--//////////////////////////////////////////////
+    /////////////////// CONSISTENT SOCIAL MEDIA FOOTER
+    ///////////////////////////////////////////////-->
+    <br/>&nbsp;
 
-		<div class="footer">
-			<div style="margin-left: 22px; padding-top: 5px; ">
-				<a href="http://www.twitter.com/jeffdill2" target="#">
-					<%= image_tag "twitter-48-black.png"%>
-				</a>
+    <div class="footer">
+      <div style="margin-left: 22px; padding-top: 5px; ">
+        <a href="http://www.twitter.com/jeffdill2" target="#">
+          <%= image_tag "twitter-48-black.png"%>
+        </a>
 
-				<a href="http://www.linkedin.com/profile/view?id=59054351" target="#">
-					<%= image_tag "linkedin-48-black.png"%>
-				</a>
+        <a href="http://www.linkedin.com/profile/view?id=59054351" target="#">
+          <%= image_tag "linkedin-48-black.png"%>
+        </a>
 
-				<a href="https://github.com/jeffdill2" target="#">
-					<%= image_tag "github-48-black.png"%>
-				</a>
-			</div>
-		</div>
+        <a href="https://github.com/jeffdill2" target="#">
+          <%= image_tag "github-48-black.png"%>
+        </a>
+      </div>
+    </div>
 
-		<!--//////////////////////////////////////////////
-		///////////////////////////////// GOOGLE ANALYTICS
-		///////////////////////////////////////////////-->
-		<% unless Rails.env.development? %>
-			<script>
-				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!--//////////////////////////////////////////////
+    ///////////////////////////////// GOOGLE ANALYTICS
+    ///////////////////////////////////////////////-->
+    <% unless Rails.env.development? %>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-				ga('create', 'UA-46472596-1', 'jeffreydill.com');
-				ga('send', 'pageview');
-			</script>
-		<% end %>
-	</body>
+        ga('create', 'UA-46472596-1', 'jeffreydill.com');
+        ga('send', 'pageview');
+      </script>
+    <% end %>
+  </body>
 </html>

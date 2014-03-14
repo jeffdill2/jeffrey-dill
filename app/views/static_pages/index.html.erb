@@ -3,25 +3,26 @@
 	<head>
 		<%= provide(:title, 'Home') %>
 	</head>
+	
+	<div class="transparent-soft-blue-box text-center">
+		<h1 class="styled-h1">
+			WELCOME
+		</h1>
 
-	<body>
-		<div class="transparent-soft-blue-box text-center" style="width: 800px; margin-left: 20px; margin: 0 auto; ">
-			<h1 class="styled-h1">
-				WELCOME
-			</h1>
+		<h2 class="styled-h2">
+			to
+		</h2>
 
-			<h2 class="styled-h2">
-				to
-			</h2>
+		<h2 class="styled-h1">
+			THE #1 JEFFREY DILL RELATED NEWS SOURCE!
+		</h2>
 
-			<h2 class="styled-h2">
-				THE&nbsp;&nbsp;#1&nbsp;&nbsp;JEFFREY&nbsp;&nbsp;DILL&nbsp;&nbsp;RELATED&nbsp;&nbsp;NEWS&nbsp;&nbsp;SOURCE!
-			</h2>
+		<br />
+		<br />
 
-			<br />
-			<br />
+		<%= link_to 'Come On In!', personal_pages_path, :class => 'btn btn-info btn-large styled-button' %>
 
-			<%= link_to 'Come On In!', personal_pages_path, :class => 'btn btn-info btn-large' %>
-		</div>
-	</body>
+		<br/>
+		<br/>
+	</div>
 </html>

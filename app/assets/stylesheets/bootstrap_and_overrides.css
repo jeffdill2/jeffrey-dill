@@ -8,114 +8,20 @@
 
 /*
 ////////////////////////////////////////////////////////////
-//////////////////////////////////// SCROLLING PHOTO BANNNER
-////////////////////////////////////////////////////////////
-*/
-* {margin: 0; padding: 0;}
-
-#container
-{
-	width: 1000px;
-	overflow: hidden;
-	margin: 50px auto;
-	/*background: white;*/
-	background-color: #EFF5FB;
-}
-
-.photobanner
-{
-	height: 233px;
-	width: 3550px;
-	margin-bottom: 80px;
-	/* opacity: 0.7; */
-}
-
-.first
-{
-    -webkit-animation: bannermove 30s linear infinite;
-       -moz-animation: bannermove 30s linear infinite;
-        -ms-animation: bannermove 30s linear infinite;
-         -o-animation: bannermove 30s linear infinite;
-            animation: bannermove 30s linear infinite;
-}
- 
-@keyframes "bannermove"
-{
-	0%
-	{
-		margin-left: 0px;
-	}
-	100%
-	{
-		margin-left: -2125px;
-	}
-}
- 
-@-moz-keyframes bannermove
-{
-	0%
-	{
-		margin-left: 0px;
-	}
-	100%
-	{
-		margin-left: -2125px;
-	}
-}
- 
-@-webkit-keyframes "bannermove"
-{
-	0%
-	{
-		margin-left: 0px;
-	}
-	100%
-	{
-		margin-left: -2125px;
-	}
-}
- 
-@-ms-keyframes "bannermove"
-{
-	0%
-	{
-		margin-left: 0px;
-	}
-	100%
-	{
-		margin-left: -2125px;
-	}
-}
- 
-@-o-keyframes "bannermove"
-{
-	0%
-	{
-		margin-left: 0px;
-	}
-	100%
-	{
-		margin-left: -2125px;
-	}
-}
-
-/*
-////////////////////////////////////////////////////////////
-////////////////////////////////////////// MISCELLANEOUS CSS
+//////////////////////////// OVERRIDES FOR TWITTER BOOTSTRAP
 ////////////////////////////////////////////////////////////
 */
 
-html, body
+body
 {
 	background-color: #EFF5FB;
-	height: 100%;
-	/*
-	background: url('wood_grain_02.jpg') no-repeat center center fixed; 
+	background: url('jeff1.jpg');
+	background: url('jeff1.jpg') no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	*/
+
 }
 
 .wrapper
@@ -152,25 +58,21 @@ a:hover
 	padding: 1%;
 }
 
-.transparent-mint-green-box
-{
-	box-shadow: 2px -2px 2px 2px rgba(60,250,180,0.25);
-	background-color: rgba(60,250,180,0.25);
-	padding: 1%;
-}
-
 .transparent-soft-blue-box
 {
 	box-shadow: 2px -2px 2px 2px rgba(40,120,150,0.25);
 	background-color: rgba(40,120,150,0.25);
 	padding: 1%;
+	margin: 0 auto;
+	min-width: 400px;
+	max-width: 1000px;
 }
 
 .navbar-header
 {
 	font-family: 'blackout2_am';
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 25px;
 	color: white;
 	line-height: 20px;
 }
@@ -196,7 +98,7 @@ a:hover
 
 .styled-paragraph
 {
-	font-family: 'blackout2_am';
+	font-family: 'Ubuntu Mono';
 	font-weight: normal;
 	font-size: 18px;
 	color: #0B4C5F;
@@ -204,9 +106,12 @@ a:hover
 	padding-left: 10px;
 }
 
-.navbar-home-page-header
+.styled-button
 {
-	font-size: 6px;
+	font-family: 'Ubuntu Mono';
+	font-weight: normal;
+	font-size: 16px;
+	color: #FFFFFF;
 }
 
 .section-background
