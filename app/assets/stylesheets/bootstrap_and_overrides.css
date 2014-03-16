@@ -15,8 +15,8 @@
 body
 {
 	background-color: #EFF5FB;
-	background: url('jeff1.jpg');
-	background: url('jeff1.jpg') no-repeat center center fixed; 
+	background: url('background-pixel-jeff.jpg');
+	background: url('background-pixel-jeff.jpg') no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -56,6 +56,7 @@ a:hover
 	box-shadow: 2px -2px 2px 2px rgba(36,32,30,0.25);
 	background-color: rgba(36,32,30,0.25);
 	padding: 1%;
+	margin: 0 auto;
 }
 
 .transparent-soft-blue-box
@@ -96,6 +97,14 @@ a:hover
 	padding-left: 10px;
 }
 
+.styled-section-header
+{
+	font-family: 'Ubuntu Mono';
+	font-weight: normal;
+	font-size: 30px;
+	color: #0B4C5F;
+}
+
 .styled-paragraph
 {
 	font-family: 'Ubuntu Mono';
@@ -103,7 +112,8 @@ a:hover
 	font-size: 18px;
 	color: #0B4C5F;
 	line-height: 20px;
-	padding-left: 10px;
+	margin-left: 30px;
+	padding-right: 45px;
 }
 
 .styled-button
@@ -119,10 +129,9 @@ a:hover
 	padding-left: 20px;
 	padding-top: 20px;
 	background-color: rgba(165,183,196,0.25);
-	width: 700px;
-	height: auto;
-	margin-left: 20px;
-	margin-top: 20px;
+	min-width: 550px;
+	max-width: 750px;
+	height: 0 auto;
 	margin: 0 auto;
 }
 
@@ -131,8 +140,55 @@ a:hover
 	padding-left: 20px;
 	padding-top: 6px;
 	background-color: #EFF5FB;
-	width: 700px;
+	width: 730px;
 	height: 60px;
-	margin-left: 10px;
-	margin-top: 10px;
+}
+
+.blog-preview-title
+{
+	font-family: 'blackout2_am';
+	font-weight: bold;
+	font-size: 40px;
+	color: #457FA4;
+	line-height: 45px;
+	text-align: left;
+	margin-top: 5px;
+}
+
+.blog-preview-article
+{
+	font-family: 'Ubuntu Mono';
+	font-weight: bold;
+	font-size: 40px;
+	color: #0B4C5F;
+	line-height: 50px;
+	text-align: left;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.blog-preview-date
+{
+	font-family: 'Ubuntu Mono';
+	font-weight: bold;
+	font-size: 30px;
+	color: #0B4C5F;
+	line-height: 40px;
+	text-align: left;
+	margin-left: 20px;
+}
+
+.blog-title
+{
+
+}
+
+.blog-article
+{
+
+}
+
+.blog-date
+{
+
 }

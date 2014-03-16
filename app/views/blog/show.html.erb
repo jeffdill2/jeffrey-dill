@@ -1,0 +1,17 @@
+<div class="section-background text-center">
+	<div class="styled-paragraph">
+		Title: <%= @blog.title %>
+	</div>
+
+	<div>
+		Article: <%= @blog.article %>
+	</div>
+
+	<div>
+		Date: <%= @blog.date %>
+	</div>
+
+	<%= link_to 'Back', blogs_path, :class => 'btn btn-success btn-large' %>
+	<%= link_to 'Delete', blog_path(@blog), :method => :delete, :class => 'btn btn-large btn-danger', :confirm => 'You sure you want to delete this?' %>
+	<%= link_to 'Edit', edit_blog_path(@blog), :class => 'btn btn-large btn-warning' %>
+</div>

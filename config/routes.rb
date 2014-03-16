@@ -11,7 +11,9 @@ JeffreyDill::Application.routes.draw do
 
   resources :home_pages
 
-  resources :memorable_pages
+  resources :blog
+
+  get '/blog', :to => 'blog#index', :as => 'blogs'
 
   resources :testing
 

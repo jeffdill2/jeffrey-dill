@@ -1,0 +1,15 @@
+<%= simple_form_for @blog do |f| %>
+	<%= f.input :title, label: 'Title Of Blog:' %>
+
+	<br/>
+
+	<%= f.input :article, label: 'Write Your Article:' %>
+
+	<br/>
+
+	<%= f.input :date, label: 'Enter The Date:', placeholder: '1900-01-30' %>
+
+	<br/>
+
+	<%= submit_tag 'Save', :class => 'btn btn-success btn-large' %>
+<% end %>
