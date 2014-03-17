@@ -1,0 +1,185 @@
+@import 'variables';
+
+/*
+////////////////////////////////////////////////////////////
+///////////////////////////////////////// GENERAL FORMATTING
+////////////////////////////////////////////////////////////
+*/
+body
+{
+  background-color: $colorLightBlueHaze;
+  background: url('background-pixel-jeff.jpg');
+  background: url('background-pixel-jeff.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 70px;
+}
+
+.styled-h1
+{
+  font-family: $fontBlackout2AM;
+  font-weight: bold;
+  font-size: 50px;
+  color: $colorDeepSeaGreen;
+  line-height: 70px;
+}
+
+.styled-h2
+{
+  font-family: $fontBlackout2AM;
+  font-weight: bold;
+  font-size: 30px;
+  color: $colorSteelBlue;
+  line-height: 35px;
+  padding-left: 10px;
+}
+
+.styled-section-header
+{
+  font-family: $fontUbuntuMono;
+  font-weight: normal;
+  font-size: 30px;
+  color: $colorDeepSeaGreen;
+}
+
+.styled-paragraph
+{
+  font-family: $fontUbuntuMono;
+  font-weight: normal;
+  font-size: 18px;
+  color: $colorDeepSeaGreen;
+  line-height: 20px;
+  margin-left: 30px;
+  padding-right: 45px;
+}
+
+.styled-button
+{
+  font-family: $fontUbuntuMono;
+  font-weight: normal;
+  font-size: 16px;
+  color: $colorWhite;
+}
+
+.section-background
+{
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: $colorGreyBlueHaze;
+  min-width: 550px;
+  max-width: 850px;
+  height: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.header-background
+{
+  padding-left: 20px;
+  padding-top: 6px;
+  background-color: $colorLightBlueHaze;
+  width: 830px;
+  height: 60px;
+}
+
+.opaque-grey-box
+{
+  box-shadow: 2px -2px 4px 4px $colorGreyBlueHaze;
+  background-color: $colorGreyBlueHaze;
+  padding: 1%;
+  margin: 0 auto;
+  min-width: 400px;
+  max-width: 1000px;
+}
+
+.opaque-blue-box
+{
+  box-shadow: 2px -2px 2px 2px $colorDuskBlueHaze;
+  background-color: $colorDuskBlueHaze;
+  padding: 1%;
+  margin: 0 auto;
+  min-width: 400px;
+  max-width: 1000px;
+}
+
+/*
+////////////////////////////////////////////////////////////
+///////////////////////////// SOCIAL MEDIA FOOTER FORMATTING
+////////////////////////////////////////////////////////////
+*/
+.wrapper
+{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.footer
+{
+  height: 4em;
+  width: 200px;
+  margin-top: 30px;
+  margin: 0 auto;
+  background-color: $colorGreyBlueHaze;
+}
+
+.push
+{
+  height: 4em;
+}
+
+a
+{
+  &:hover
+  {
+    text-decoration: none;
+  }
+}
+
+/*
+////////////////////////////////////////////////////////////
+///////////////////////////// FOOTER PARTIAL PAGE FORMATTING
+////////////////////////////////////////////////////////////
+*/
+
+/*
+.footer
+{
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #EAEAEA;
+  color: #999;
+
+  a
+  {
+    color: #555;
+
+    &:hover
+    {
+      color: #222;
+    }
+  }
+
+  small
+  {
+    float: left;
+  }
+  
+  ul
+  {
+    float: right;
+    list-style: none;
+  }
+
+  ul li
+  {
+    float: left;
+    margin-left: 10px;
+  }
+}
+*/

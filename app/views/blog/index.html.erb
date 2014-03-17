@@ -2,21 +2,19 @@
 
 <% @blogs.each do |blog| %>
 	<%= link_to blog_path(blog) do %>
-	<div class="section-background text-center" style="margin-bottom: 30px; ">
-		<div class="header-background">
+	<div class="blog-section-background text-center">
+		<div class="blog-header-background">
 			<div class="blog-preview-title">
-				Title: <%= blog.title %>
+				<%= blog.title %>
 			</div>
 		</div>
 
-		<div class="blog-preview-article">
-			Article: <%= blog.article %>
+		<div class="blog-preview-date">
+			<%= blog.date.strftime("%A, %B %d, %Y") %>
 		</div>
 
-		<br/>
-
-		<div class="blog-preview-date">
-			Date: <%= blog.date %>
+		<div class="blog-preview-article">
+			<%= blog.article[0,150] + "..." %>
 		</div>
 	</div>
 	<% end %>

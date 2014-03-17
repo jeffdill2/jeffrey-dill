@@ -1,4 +1,6 @@
 class BlogController < ApplicationController
+	before_filter :authenticate, :except => [:index, :show]
+
 	def create
 		@blog = Blog.create( blog_params )
 
@@ -43,8 +45,14 @@ class BlogController < ApplicationController
 	end
 
 	private
-
 	def blog_params
 		params.require(:blog).permit(:title, :article, :date)
+	end
+
+	private
+	def authenticate
+		authenticate_or_request_with_http_basic do |name, password|
+			name == "admin" && password == "secret"
+		end
 	end
 end	
