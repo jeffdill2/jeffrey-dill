@@ -1,3 +1,5 @@
+$blogs
+
 class BlogController < ApplicationController
 	before_filter :authenticate, :except => [:index, :show]
 
