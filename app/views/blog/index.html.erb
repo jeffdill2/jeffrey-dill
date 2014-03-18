@@ -1,21 +1,21 @@
 <%= link_to 'Create New Blog', new_blog_path, :class => 'btn btn-success btn-large' %>
 
-<% @blogs.each do |blog| %>
+<% $blogs.each do |blog| %>
 	<%= link_to blog_path(blog) do %>
-	<div class="blog-section-background text-center">
-		<div class="blog-header-background">
-			<div class="blog-preview-title">
-				<%= blog.title %>
+		<div class="blog-section-background text-center">
+			<div class="blog-header-background">
+				<div class="blog-preview-title">
+					<%= blog.title %>
+				</div>
+			</div>
+
+			<div class="blog-preview-date">
+				<%= blog.date.strftime("%A, %B %d, %Y") %>
+			</div>
+
+			<div class="blog-preview-article">
+				<%= blog.article[0,150] + "..." %>
 			</div>
 		</div>
-
-		<div class="blog-preview-date">
-			<%= blog.date.strftime("%A, %B %d, %Y") %>
-		</div>
-
-		<div class="blog-preview-article">
-			<%= blog.article[0,150] + "..." %>
-		</div>
-	</div>
 	<% end %>
 <% end %>
