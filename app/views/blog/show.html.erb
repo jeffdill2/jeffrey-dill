@@ -1,14 +1,14 @@
 <div class="section-background text-center">
-	<div class="styled-paragraph">
-		Title: <%= @blog.title %>
+	<div class="blog-title">
+		<%= @blog.title %>
 	</div>
 
-	<div>
-		Article: <%= @blog.article %>
+	<div class="blog-date">
+		<%= @blog.date.strftime("%A, %B %d, %Y") %>
 	</div>
 
-	<div>
-		Date: <%= @blog.date %>
+	<div class="blog-article">
+		<%= simple_format(@blog.article) %>
 	</div>
 
 	<%= link_to 'Back', blogs_path, :class => 'btn btn-success btn-large' %>

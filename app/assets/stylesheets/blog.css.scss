@@ -42,6 +42,42 @@
   margin-right: 30px;
 }
 
+.blog-title
+{
+  font-family: $fontBlackout2AM;
+  font-weight: bold;
+  font-size: 40px;
+  color: $colorSteelBlue;
+  line-height: 50px;
+  padding-bottom: 20px;
+}
+
+.blog-article
+{
+  font-family: $fontInconsolata;
+  font-weight: normal;
+  font-size: medium;
+  color: $colorDeepSeaGreen;
+  line-height: 23px;
+  margin-left: 30px;
+  padding-right: 45px;
+  text-align: justify;
+  padding-bottom: 20px;
+}
+
+.blog-date
+{
+  font-family: $fontUbuntuMono;
+  font-weight: normal;
+  font-size: 18px;
+  color: $colorDeepSeaGreen;
+  line-height: 20px;
+  margin-left: 30px;
+  padding-right: 45px;
+  text-align: right;
+  padding-bottom: 20px;
+}
+
 .blog-section-background
 {
   padding-left: 20px;
@@ -81,19 +117,4 @@
   background-color: $colorLightBlueHaze;
   width: 830px;
   height: 60px;
-}
-
-.blog-title
-{
-
-}
-
-.blog-article
-{
-
-}
-
-.blog-date
-{
-
 }
