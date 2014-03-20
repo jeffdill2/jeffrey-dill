@@ -73,11 +73,13 @@
                   </li>
 
                   <% $blogs.limit(5).each do |blog| %>
-                    <li role="presentation" style="margin-left: 10px; ">
-                      <a role="menuitem" tabindex="-1" href=<%= blog_path(blog) %>>
-                        <%= blog.title %>
-                      </a>
-                    </li>
+                    <% cache(blog) do %>
+                      <li role="presentation" style="margin-left: 10px; ">
+                        <a role="menuitem" tabindex="-1" href=<%= blog_path(blog) %>>
+                          <%= blog.title %>
+                        </a>
+                      </li>
+                    <% end %>
                   <% end %>
                 </ul>
               </li>
