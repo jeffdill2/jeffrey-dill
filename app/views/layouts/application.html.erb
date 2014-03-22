@@ -51,12 +51,6 @@
                 <%= link_to ':THE_PROFESSIONAL', professional_pages_path %>
               </li>
 
-              <!--
-              <li>
-                <%#= link_to ':THE_EDITORIAL', blogs_path %>
-              </li>
-              -->
-
               <li class="dropdown">
                 <a class="dropdown-toggle" id="recent_blog_posts" role="button" data-toggle="dropdown" data-target="#" href="/blog">
                   :THE_EDITORIAL
@@ -72,12 +66,10 @@
                     Recent Posts...
                   </li>
 
-                  <% cache do %>
-                    <% $blogs.limit(5).each do |blog| %>
+                  <% cache(recent_blog_posts_cache_key) do %>
+                    <% Blog.order('created_at DESC').limit(5).each do |blog| %>
                       <li role="presentation" style="margin-left: 10px; ">
-                        <a role="menuitem" tabindex="-1" href=<%= blog_path(blog) %>>
-                          <%= blog.title %>
-                        </a>
+                        <%= link_to blog.title, blog, role: 'menuitem', tabindex: '-1' %>
                       </li>
                     <% end %>
                   <% end %>

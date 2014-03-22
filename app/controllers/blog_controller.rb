@@ -1,5 +1,3 @@
-$blogs
-
 class BlogController < ApplicationController
 	before_filter :authenticate, :except => [:index, :show]
 
@@ -39,7 +37,7 @@ class BlogController < ApplicationController
 	end
 
 	def index
-		$blogs = Blog.all.order('created_at DESC')
+		@blogs = Blog.all.order('created_at DESC')
 	end
 
 	def show
@@ -54,7 +52,7 @@ class BlogController < ApplicationController
 	private
 	def authenticate
 		authenticate_or_request_with_http_basic do |name, password|
-			name == "admin" && password == "secret"
+			name == "admin" && password == "admin"
 		end
 	end
 end	

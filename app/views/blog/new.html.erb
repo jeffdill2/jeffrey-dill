@@ -1,7 +1,14 @@
-<div class="section-background text-center">
-	<div class="styled-h2">
-		Create The Blog
+<!DOCTYPE html>
+<html>
+	<head>
+		<%= provide(:title, "New Blog") %>
+	</head>
+
+	<div class="section-background text-center">
+		<div class="styled-h2">
+			Create The Blog
+		</div>
+		
+		<%= render :partial => 'form' %>
 	</div>
-	
-	<%= render :partial => 'form' %>
-</div>
+</html>

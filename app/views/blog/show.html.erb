@@ -1,17 +1,24 @@
-<div class="section-background text-center">
-	<div class="blog-title">
-		<%= @blog.title %>
-	</div>
+<!DOCTYPE html>
+<html>
+	<head>
+		<%= provide(:title, @blog.title) %>
+	</head>
 
-	<div class="blog-date">
-		<%= @blog.date.strftime("%A, %B %d, %Y") %>
-	</div>
+	<div class="section-background text-center">
+		<div class="blog-title">
+			<%= @blog.title %>
+		</div>
 
-	<div class="blog-article">
-		<%= simple_format(@blog.article) %>
-	</div>
+		<div class="blog-date">
+			<%= @blog.date.strftime("%A, %B %d, %Y") %>
+		</div>
 
-	<%= link_to 'Back', blogs_path, :class => 'btn btn-success btn-large' %>
-	<%= link_to 'Delete', blog_path(@blog), :method => :delete, :class => 'btn btn-large btn-danger', :confirm => 'You sure you want to delete this?' %>
-	<%= link_to 'Edit', edit_blog_path(@blog), :class => 'btn btn-large btn-warning' %>
-</div>
+		<div class="blog-article">
+			<%= simple_format(@blog.article) %>
+		</div>
+
+		<%= link_to 'Back', blogs_path, :class => 'btn btn-success btn-large' %>
+		<%= link_to 'Delete', blog_path(@blog), :method => :delete, :class => 'btn btn-large btn-danger', :confirm => 'You sure you want to delete this?' %>
+		<%= link_to 'Edit', edit_blog_path(@blog), :class => 'btn btn-large btn-warning' %>
+	</div>
+</html>
