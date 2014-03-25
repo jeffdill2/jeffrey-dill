@@ -13,6 +13,8 @@ JeffreyDill::Application.routes.draw do
 
   resources :blog
 
+  resources :tweets
+
   get '/blog', :to => 'blog#index', :as => 'blogs'
 
   resources :testing
