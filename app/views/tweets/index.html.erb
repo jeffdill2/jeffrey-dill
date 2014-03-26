@@ -2,32 +2,7 @@
 <html>
 	<head>
 		<%= provide(:title, 'Tweets') %>
-
-		<!--
-		<script>
-			!function(d,s,id)
-			{
-				var js, fjs = d.getElementsByTagName(s)[0];
-				var p = /^http:/.test(d.location)?'http':'https';
-
-				if(!d.getElementById(id))
-				{
-					js = d.createElement(s);
-					js.id = id;
-					js.src = p+"://platform.twitter.com/widgets.js";
-					fjs.parentNode.insertBefore(js,fjs);
-				}
-			}
-			(document,"script","twitter-wjs");
-		</script>
-		-->
 	</head>
-
-	<!--
-	<a class="twitter-timeline" href="https://twitter.com/jeffdill2" data-widget-id="447911320210251776">
-		Tweets by @jeffdill2
-	</a>
-	-->
 
 	<% @tweets.each do |tweet| %>
 		<div class="tweet-container span3">

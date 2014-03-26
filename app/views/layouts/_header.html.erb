@@ -1,0 +1,56 @@
+<nav class="navbar navbar-inverse navbar-header navbar-fixed-top" style="position: fixed; ">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div style="margin-top: -3px; ">
+        <%= link_to '<span style="font-size: 30px; ">[</span>JEFFREY.DILL<span style="font-size: 30px; ">]</span>'.html_safe, root_path, :class => 'brand' %>
+      </div>
+
+      <div class="nav-collapse collapse">
+        <ul class="nav" style="margin-top: 4px; ">
+          <li>
+            <%= link_to ':THE_PERSONAL', personal_pages_path %>
+          </li>
+
+          <li>
+            <%= link_to ':THE_PROFESSIONAL', professional_pages_path %>
+          </li>
+
+          <li>
+            <%= link_to ':THE_SOCIAL', tweets_path %>
+          </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" id="recent_blog_posts" role="button" data-toggle="dropdown" data-target="#" href="/blog">
+              :THE_EDITORIAL
+              <b class="caret"></b>
+            </a>
+
+            <ul class="dropdown-menu styled-paragraph" role="menu" aria-labelledby="recent_blog_posts">
+              <li>
+                <%= link_to 'View All Posts', blogs_path %>
+              </li>
+
+              <li style="margin-left: 20px; padding-top: 10px; padding-bottom: 5px; ">
+                Recent Posts...
+              </li>
+
+              <% cache(recent_blog_posts_cache_key) do %>
+                <% Blog.order('created_at DESC').limit(5).each do |blog| %>
+                  <li role="presentation" style="margin-left: 10px; ">
+                    <%= link_to blog.title, blog, role: 'menuitem', tabindex: '-1' %>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

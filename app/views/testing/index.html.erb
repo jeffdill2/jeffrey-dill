@@ -10,6 +10,11 @@ http://designshack.net/articles/css/infinitephotobanner/
 <html>
 	<head>
 		<script>
+			/*
+			////////////////////////////////////////////////////////////
+			/////////////////////////////////////////// AJAX EXPERIMENTS
+			////////////////////////////////////////////////////////////
+			*/
 			function loadXMLDoc()
 			{
 				//alert("loadXMLDoc running.");
@@ -40,10 +45,40 @@ http://designshack.net/articles/css/infinitephotobanner/
 				xmlhttp.open("GET", "http://www.mozilla.org/", false);
 				xmlhttp.send();
 			}
+
+			/*
+			////////////////////////////////////////////////////////////
+			//////////////////////////////////////// TWITTER FEED WIDGET
+			////////////////////////////////////////////////////////////
+			*/
+			!function(d,s,id)
+			{
+				var js, fjs = d.getElementsByTagName(s)[0];
+				var p = /^http:/.test(d.location)?'http':'https';
+
+				if(!d.getElementById(id))
+				{
+					js = d.createElement(s);
+					js.id = id;
+					js.src = p+"://platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+			}
+			(document,"script","twitter-wjs");
 		</script>
 	</head>
 
 	<body>
+		<!--////////////////////////////////////////////////////////
+		//////////////////////////////////////// TWITTER FEED WIDGET
+		/////////////////////////////////////////////////////////-->
+		<a class="twitter-timeline" href="https://twitter.com/jeffdill2" data-widget-id="447911320210251776">
+			Tweets by @jeffdill2
+		</a>
+
+		<!--////////////////////////////////////////////////////////
+		///////////////////////////////////// SCROLLING PHOTO BANNER
+		/////////////////////////////////////////////////////////-->
 		<div id="container">
 		    <div class="photobanner">
 		        <%= image_tag "CNN_Award.png", :class => "first", :width => "233px", :height => "350px" %>
@@ -64,11 +99,9 @@ http://designshack.net/articles/css/infinitephotobanner/
 		    </div>
 		</div>
 
-
-
-
-
-
+		<!--////////////////////////////////////////////////////////
+		//// SCROLLING PHOTO BANNER (TESTING - DIV INSTEAD OF IMAGE)
+		/////////////////////////////////////////////////////////-->
 		<div id="container">
 		    <div class="photobanner">
 		        <div class="transparent-soft-blue-box text-center first" style="width: 466px; height: 350px; ">
@@ -133,14 +166,9 @@ http://designshack.net/articles/css/infinitephotobanner/
 		    </div>
 		</div>
 
-
-
-
-
-
-
-
-
+		<!--////////////////////////////////////////////////////////
+		////////////////////// BUTTON TO TRIGGER JAVASCRIPT FUNCTION
+		/////////////////////////////////////////////////////////-->
 		<%= link_to "Who Am I?...", "#", :onclick => "loadXMLDoc()", :class => "btn btn-info btn-medium" %>
 	</body>
 </html>
