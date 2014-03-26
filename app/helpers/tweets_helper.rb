@@ -9,7 +9,7 @@ module TweetsHelper
 		hshParsedTweet = JSON.parse(tweet.to_json)
 
 		if (defined? hshParsedTweet['entities']['media'][0]['media_url_https']) == nil
-			""
+			nil
 		else
 			hshParsedTweet['entities']['media'][0]['media_url_https']
 		end

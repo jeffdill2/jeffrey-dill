@@ -32,17 +32,12 @@
             <span class="icon-bar"></span>
           </a>
 
-            <!-- Be sure to leave the brand out there if you want it shown -->
-            <!-- <a class="brand nav-bar-heading" href="<%= root_path %>">Jeffrey.Dill(home);</a> -->
-
-          <!-- <span class="brand" style="font-size: 25px; margin-right: -16px; margin-top: -3px; ">[</span> -->
-          <%= link_to 'JEFFREY.DILL', root_path, :class => 'brand' %>
-          <!-- <span class="brand" style="font-size: 25px; margin-left: -35px; margin-top: -3px; ">]</span> -->
+          <div style="margin-top: -3px; ">
+            <%= link_to '<span style="font-size: 30px; ">[</span>JEFFREY.DILL<span style="font-size: 30px; ">]</span>'.html_safe, root_path, :class => 'brand' %>
+          </div>
        
-            <!-- Everything you want hidden at 940px or less, place within here -->
           <div class="nav-collapse collapse">
-            <!-- .nav, .navbar-search, .navbar-form, etc -->
-            <ul class="nav">
+            <ul class="nav" style="margin-top: 4px; ">
               <li>
                 <%= link_to ':THE_PERSONAL', personal_pages_path %>
               </li>
