@@ -1,8 +1,6 @@
-/*
-////////////////////////////////////////////////////////////
+/*//////////////////////////////////////////////////////////
 //////////////////////////////////// SCROLLING PHOTO BANNNER
-////////////////////////////////////////////////////////////
-*/
+//////////////////////////////////////////////////////////*/
 
 * {margin: 0; padding: 0;}
 
@@ -16,7 +14,7 @@ html, body
 	width: 1000px;
 	overflow: hidden;
 	margin: 50px auto;
-	background: white; // COMMENT THIS BACK OUT
+	/*background: white;*/
 	background-color: #EFF5FB;
 }
 
@@ -25,7 +23,7 @@ html, body
 	height: 233px;
 	width: 3550px;
 	margin-bottom: 80px;
-	opacity: 0.7; // COMMENT THIS BACK OUT
+	/*opacity: 0.7;*/
 }
 
 .first
