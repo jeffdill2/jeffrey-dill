@@ -4,17 +4,19 @@
 		<%= provide(:title, 'Tweets') %>
 	</head>
 
-	<% @tweets.each do |tweet| %>
-		<div class="tweet-container span3">
-			<div class="tweet-text">
-				<%= tweet_text(tweet) %>
-			</div>
+	<div class="tweets-body">
+		<% @tweets.each do |tweet| %>
+			<div class="tweet-container span3">
+				<div class="tweet-text">
+					<%= tweet_text(tweet) %>
+				</div>
 
-			<br/>
+				<br/>
 
-			<div>
-				<%= image_tag tweet_url(tweet) %>
+				<div>
+					<%= image_tag tweet_url(tweet) %>
+				</div>
 			</div>
-		</div>
-	<% end %>
+		<% end %>
+	</div>
 </html>

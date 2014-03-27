@@ -14,6 +14,12 @@
   color: $colorDeepSeaGreen;
 }
 
+.tweets-body
+{
+  margin: 0 auto;
+  width: 90%;
+}
+
 .tweet-container
 {
   padding-left: 20px;
@@ -39,9 +45,9 @@
   &:hover
   {
     opacity: 0.85;
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
