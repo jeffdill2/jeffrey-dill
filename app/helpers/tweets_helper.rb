@@ -17,7 +17,7 @@ module TweetsHelper
 			if (char == "@" || bolUserFound) then
 				bolUserFound = true
 
-				if (!valid_user_or_hashtag_character(char) || (iCharCount == iTweetLength)) then
+				if (!valid_user_or_hashtag_character(char)) then
 					strTweetModifiedText = strTweetModifiedText + "<a href='http://www.twitter.com/" + strTweetUser + "' target='_blank'>" + strTweetUser + "</a>"
 					strTweetUser = ""
 					bolUserFound = false
@@ -25,11 +25,15 @@ module TweetsHelper
 					strTweetModifiedText = strTweetModifiedText + char
 				else
 					strTweetUser = strTweetUser + char
+
+					if (iCharCount == iTweetLength) then
+						strTweetModifiedText = strTweetModifiedText + "<a href='http://www.twitter.com/" + strTweetUser + "' target='_blank'>" + strTweetUser + "</a>"
+					end
 				end
 			elsif (char == "#" || bolHashtagFound) then
 				bolHashtagFound = true
 
-				if (!valid_user_or_hashtag_character(char) || (iCharCount == iTweetLength)) then
+				if (!valid_user_or_hashtag_character(char)) then
 					strTweetModifiedText = strTweetModifiedText + "<a href='http://www.twitter.com/search?q=%23" + strTweetHashtag.sub("#", "") + "&src=hash' target='_blank'>" + strTweetHashtag + "</a>"
 					strTweetHashtag = ""
 					bolHashtagFound = false
@@ -37,6 +41,10 @@ module TweetsHelper
 					strTweetModifiedText = strTweetModifiedText + char
 				else
 					strTweetHashtag = strTweetHashtag + char
+
+					if (iCharCount == iTweetLength) then
+						strTweetModifiedText = strTweetModifiedText + "<a href='http://www.twitter.com/search?q=%23" + strTweetHashtag.sub("#", "") + "&src=hash' target='_blank'>" + strTweetHashtag + "</a>"
+					end
 				end
 			else
 				strTweetModifiedText = strTweetModifiedText + char
