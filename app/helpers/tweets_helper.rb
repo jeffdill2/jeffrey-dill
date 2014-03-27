@@ -10,8 +10,10 @@ module TweetsHelper
 		iCharCount = 0
 		bolUserFound = false
 		bolHashtagFound = false
-		strUserLinkRoot = "<a href='http://www.twitter.com/|USER|' target='_blank'>|USER|</a>"
-		strHashtagLinkRoot = "<a href='http://www.twitter.com/search?q=%23|HASHTAG|&src=hash' target='_blank'>#|HASHTAG|</a>"
+		strUserColor = "#2E93C9"
+		strHashtagColor = "#5D9970"
+		strUserLinkRoot = "<a class='grow' href='http://www.twitter.com/|USER|' target='_blank'><span style='color: #{strUserColor};'>|USER|</span></a>"
+		strHashtagLinkRoot = "<a class='grow' href='http://www.twitter.com/search?q=%23|HASHTAG|&src=hash' target='_blank'><span style='color: #{strHashtagColor};'>#|HASHTAG|</span></a>"
 
 		strTweetParsedText.each_char do |char|
 			iCharCount += 1
