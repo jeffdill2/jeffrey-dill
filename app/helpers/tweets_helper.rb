@@ -10,6 +10,8 @@ module TweetsHelper
 		iCharCount = 0
 		bolUserFound = false
 		bolHashtagFound = false
+		strUserLinkRoot = "<a href='http://www.twitter.com/|USER|' target='_blank'>|USER|</a>"
+		strHashtagLinkRoot = "<a href='http://www.twitter.com/search?q=%23|HASHTAG|&src=hash' target='_blank'>#|HASHTAG|</a>"
 
 		strTweetParsedText.each_char do |char|
 			iCharCount += 1
@@ -18,7 +20,7 @@ module TweetsHelper
 				bolUserFound = true
 
 				if (!valid_user_or_hashtag_character(char)) then
-					strTweetModifiedText = strTweetModifiedText + "<a href='http://www.twitter.com/" + strTweetUser + "' target='_blank'>" + strTweetUser + "</a>"
+					strTweetModifiedText = strTweetModifiedText + strUserLinkRoot.gsub("|USER|", strTweetUser)
 					strTweetUser = ""
 					bolUserFound = false
 
@@ -27,14 +29,14 @@ module TweetsHelper
 					strTweetUser = strTweetUser + char
 
 					if (iCharCount == iTweetLength) then
-						strTweetModifiedText = strTweetModifiedText + "<a href='http://www.twitter.com/" + strTweetUser + "' target='_blank'>" + strTweetUser + "</a>"
+						strTweetModifiedText = strTweetModifiedText + strUserLinkRoot.gsub("|USER|", strTweetUser)
 					end
 				end
 			elsif (char == "#" || bolHashtagFound) then
 				bolHashtagFound = true
 
 				if (!valid_user_or_hashtag_character(char)) then
-					strTweetModifiedText = strTweetModifiedText + "<a href='http://www.twitter.com/search?q=%23" + strTweetHashtag.sub("#", "") + "&src=hash' target='_blank'>" + strTweetHashtag + "</a>"
+					strTweetModifiedText = strTweetModifiedText + strHashtagLinkRoot.gsub("|HASHTAG|", strTweetHashtag.sub("#", ""))
 					strTweetHashtag = ""
 					bolHashtagFound = false
 
@@ -43,7 +45,7 @@ module TweetsHelper
 					strTweetHashtag = strTweetHashtag + char
 
 					if (iCharCount == iTweetLength) then
-						strTweetModifiedText = strTweetModifiedText + "<a href='http://www.twitter.com/search?q=%23" + strTweetHashtag.sub("#", "") + "&src=hash' target='_blank'>" + strTweetHashtag + "</a>"
+						strTweetModifiedText = strTweetModifiedText + strHashtagLinkRoot.gsub("|HASHTAG|", strTweetHashtag.sub("#", ""))
 					end
 				end
 			else
