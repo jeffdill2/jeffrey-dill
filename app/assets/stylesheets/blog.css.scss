@@ -17,10 +17,10 @@
 
 .blog-preview-article
 {
-  font-family: $fontUbuntuMono;
-  font-weight: bold;
+  font-family: $fontInconsolata;
+  font-weight: normal;
   font-size: 25px;
-  color: $colorDeepSeaGreen;
+  color: $colorBlack;
   line-height: 35px;
   text-align: left;
   margin-top: 20px;
@@ -31,7 +31,7 @@
 
 .blog-preview-date
 {
-  font-family: $fontUbuntuMono;
+  font-family: $fontInconsolata;
   font-weight: bold;
   font-size: 20px;
   color: $colorDeepSeaGreen;
@@ -55,7 +55,7 @@
   font-family: $fontInconsolata;
   font-weight: normal;
   font-size: medium;
-  color: $colorDeepSeaGreen;
+  color: $colorBlack;
   line-height: 23px;
   margin-left: 30px;
   padding-right: 45px;
@@ -65,7 +65,7 @@
 
 .blog-date
 {
-  font-family: $fontUbuntuMono;
+  font-family: $fontInconsolata;
   font-weight: normal;
   font-size: 18px;
   color: $colorDeepSeaGreen;

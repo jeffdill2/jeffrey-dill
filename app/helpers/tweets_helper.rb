@@ -10,8 +10,8 @@ module TweetsHelper
 		iCharCount = 0
 		bolUserFound = false
 		bolHashtagFound = false
-		strUserColor = "#2E93C9"
-		strHashtagColor = "#5D9970"
+		strUserColor = "#267DC0"
+		strHashtagColor = "#208345"
 		strUserLinkRoot = "<a class='grow' href='http://www.twitter.com/|USER|' target='_blank'><span style='color: #{strUserColor};'>|USER|</span></a>"
 		strHashtagLinkRoot = "<a class='grow' href='http://www.twitter.com/search?q=%23|HASHTAG|&src=hash' target='_blank'><span style='color: #{strHashtagColor};'>#|HASHTAG|</span></a>"
 
@@ -55,7 +55,7 @@ module TweetsHelper
 			end
 		end
 
-		strTweetModifiedText.html_safe
+		strTweetModifiedText.gsub(/[[:space:]]/, " ").html_safe
 	end
 
 	def tweet_url(tweet)
