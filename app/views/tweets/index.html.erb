@@ -6,6 +6,10 @@
 
 	<div class="tweets-body">
 		<% @tweets.each do |tweet| %>
+			<div style="background-color:yellow;border:1px solid black;display:none;width:200px;height:200px;" id="<%= tweet_id(tweet) %>">
+				<%= image_tag tweet_url(tweet) %>
+			</div>
+
 			<div class="tweet-container span3 float">
 				<div class="tweet-text">
 					<%= tweet_text(tweet) %>
@@ -13,19 +17,8 @@
 
 				<br/>
 
-				<div data-target="#picModal" data-toggle="modal">
-					<%= image_tag tweet_url(tweet) %>
-				</div>
-			</div>
-
-			<div id="picModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="picModalLabel" aria-hidden="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h3>&nbsp;</h3>
-				</div>
-				
-				<div class="modal-body">
-					<p><%= image_tag tweet_url(tweet) %></p>
+				<div>
+					<a href="#" onClick="Popup.show('<%= tweet_id(tweet) %>'); return false; "><%= image_tag tweet_url(tweet) %></a>
 				</div>
 			</div>
 		<% end %>
