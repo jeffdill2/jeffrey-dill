@@ -1,3 +1,71 @@
-// Place all the styles related to the professional_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+/*//////////////////////////////////////////////////////////
+////////////////////////////////// MEDIA SPECIFIC FORMATTING
+//////////////////////////////////////////////////////////*/
+.gist-button
+{
+	font-family: $fontBlackout2AM;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 30px;
+	color: $colorWhite;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: $colorSteelBlue;
+	max-width: 250px;
+	display: table-cell;
+
+	&:hover
+	{
+		opacity: 0.5;
+	}
+}
+
+.details-button
+{
+	background-color: $colorDeepSeaGreen;
+
+	@extend .gist-button
+}
+
+.gist-container
+{
+	display: none;
+	margin-top: 40px; 
+}
+
+.details-container
+{
+	text-align: justify;
+
+	@extend .gist-container
+}
+
+.button-container
+{
+	margin-top: 40px;
+	width: 97.5%;
+	display: table;
+	table-layout: fixed; 
+}
+
+.header-container
+{
+	@extend .button-container
+}
+
+.company-header
+{
+	text-align: left;
+	max-width: 250px;
+	display: table-cell;
+}
+
+.date-header
+{
+	text-align: right;
+
+	@extend .company-header
+}

@@ -2,6 +2,18 @@
 <html>
 	<head>
 		<%= provide(:title, 'Professional') %>
+
+		<script type="text/javascript">
+			function toggle(containerID)
+			{
+				var altContainerID = (containerID.indexOf("gist") != -1) ? containerID.replace("gist", "details") : containerID.replace("details", "gist");
+				var stateSelected = document.getElementById(containerID);
+				var stateAlternate = document.getElementById(altContainerID);
+
+				stateSelected.style.display = (stateSelected.style.display != 'block') ? 'block' : 'none';
+				stateAlternate.style.display = stateAlternate.style.display = 'none';
+			}
+		</script>
 	</head>
 
 	<body>
@@ -12,9 +24,21 @@
 				</h2>
 			</div>
 
-			<div class="styled-paragraph">
-				<br/>&nbsp;
+			<div class="button-container">
+				<div class="gist-button" onClick="toggle('professional-summary-gist')">
+					:THE_GIST
+				</div>
 
+				<div class="details-button" onClick="toggle('professional-summary-details')">
+					:THE_DETAILS
+				</div>
+			</div>
+
+			<div class="styled-paragraph gist-container" id="professional-summary-gist">
+				Me == Geek
+			</div>
+
+			<div class="styled-paragraph details-container" id="professional-summary-details">
 				<div>
 					I love all things "tech" and have a passion for writing code.
 					<br/><br/>
@@ -26,97 +50,248 @@
 		<div class="section-background">
 			<div class="header-background">
 				<h2 class="styled-h2">
+					Skills and Competencies
+				</h2>
+			</div>
+
+			<div class="button-container">
+				<div class="gist-button" onClick="toggle('skills-competencies-gist')">
+					:THE_GIST
+				</div>
+
+				<div class="details-button" onClick="toggle('skills-competencies-details')">
+					:THE_DETAILS
+				</div>
+			</div>
+
+			<div class="gist-container" id="skills-competencies-gist">
+				<div class="styled-paragraph">
+					WHATEVER IT TAKES!
+				</div>
+			</div>
+				
+			<div class="details-container" id="skills-competencies-details">
+				<div class="styled-paragraph">
+					<% Skill.order('skill ASC').each do |skill| %>
+						<ul>
+							<li>
+								<%= skill.skill %>
+							</li>
+						</ul>
+					<% end %>
+				</div>
+			</div>
+		</div>
+
+		<div class="section-background">
+			<div class="header-background">
+				<h2 class="styled-h2">
 					Work Experience
 				</h2>
 			</div>
 
-			<div class="styled-paragraph">
-				<br/>&nbsp;
-				<br/>&nbsp;
-
-				<div class="styled-section-header">
-					Heeter
+			<div class="button-container">
+				<div class="gist-button" onClick="toggle('work-experience-gist')">
+					:THE_GIST
 				</div>
 
-				<br/><br/>
-
-				<div>
-					Developed the entire back-end and helped to develop the front-end for Heeter's web-to-print / print-on-demand solution, ShopPRO - a division of HeeterPRO. This solution includes a JavaScript-enhanced client-facing web portal, SQL server utilization, two C# applications, and an ASP.NET credit card payment website.
-					<br/><br/>
-					Responsible for the data and source-code maintenance of a fulfillment project for a top health insurance organization - this project being the company's largest single source of revenue.
-					<br/><br/>
-					The main source of knowledge for the software suite used for all data housing, maintenance, and manipulation.
-					<br/><br/>
-					Helped to create and now maintain the company website - Heeter.com - using HTML, CSS, JavaScript, and DotNetNuke as the CMS.
+				<div class="details-button" onClick="toggle('work-experience-details')">
+					:THE_DETAILS
 				</div>
 			</div>
 
-			<div class="styled-paragraph">
-				<br/>&nbsp;
-				<br/>&nbsp;
+			<div class="gist-container" id="work-experience-gist">
+				<div class="styled-paragraph">
+					<div class="styled-section-header">
+						<div class="header-container">
+							<div class="company-header">
+								Heeter
+							</div>
 
-				<div class="styled-section-header">
-					Classic Graphics
-				</div>
+							<div class="date-header">
+								08/12 - 03/14
+							</div>
+						</div>
+					</div>
 
-				<br/><br/>
-
-				<div>
-					Co-lead an initiative to design a new Job Order Entry system for the Variable Data division of the company. I accomplished this by creating a highly-dynamic Excel document, built on top of 7,900 lines of VBA code. Some of the tasks/features accomplished in this were as follows:<br/><br/>
+					<br/>
 
 					<ul>
 						<li>
-							Significantly reduced the potential for human error.
+							C#
 						</li>
 						<li>
-							Utilized the Principle of Least Privilege.
+							ASP.NET
 						</li>
 						<li>
-							Decreased the amount of time for a job to be processed - from Planning to Production.
-						</li>
-						<li>
-							Increased QC accuracy and effectiveness, even while decreasing the number of QC "checkpoints".
-						</li>
-						<li>
-							Increased/enhanced the organization of needed information, and eliminated unneeded or redundant information.
+							HTML
 						</li>
 					</ul>
+				</div>
+
+				<div class="styled-paragraph">
+					<br/><br/>
+
+					<div class="styled-section-header">
+						<div class="header-container">
+							<div class="company-header">
+								Classic Graphics
+							</div>
+
+							<div class="date-header">
+								06/10 - 08/12
+							</div>
+						</div>
+					</div>
 
 					<br/>
-					Helped to define, create, and implement many of the data standards and infrastructure that lead to the company becoming ISO:27001 certified in June 2012.
+
+					<ul>
+						<li>
+							VBA
+						</li>
+						<li>
+							Visual FoxPro
+						</li>
+						<li>
+							Pervasive PSQL
+						</li>
+					</ul>
+				</div>
+
+				<div class="styled-paragraph">
 					<br/><br/>
-					When a large client's campaign requirements changed drastically, forcing us to use an outside vendor for a portion of their data work, I wrote an application to manage the relationship between our internal software and the outside vendor's software. Between the application and the implementation of new standards/procedures, automated jobs expected to be quick-turn were able to remain as such. All of this was accomplished weeks ahead of the clients requested implementation time-frame.
-					<br/><br/>
-					Wrote two separate applications to meet the extremely quick-turn demands of a large client. One of which built an intricate data report in Excel that encompassed several different points along the data-processing timeline for their jobs. The other populated the above mentioned Job Order Entry form, preparing it to be given to our Production department. For either process to be accomplished manually, because of the size and complexity of the client's jobs, took between 2 and 4 hours. Both applications accomplished the previously manual tasks in about 30 seconds, eliminated the potential for human error, and enabled us to meet the client's demanding schedule.
+
+					<div class="styled-section-header">
+						<div class="header-container">
+							<div class="company-header">
+								SourceLink Carolina
+							</div>
+
+							<div class="date-header">
+								06/07 - 06/10
+							</div>
+						</div>
+					</div>
+
+					<br/>
+
+					<ul>
+						<li>
+							Visual FoxPro
+						</li>
+						<li>
+							Shell Scripting
+						</li>
+						<li>
+							GPG/PGP
+						</li>
+					</ul>
 				</div>
 			</div>
 
-			<div class="styled-paragraph">
-				<br/>&nbsp;
-				<br/>&nbsp;
+			<div class="details-container" id="work-experience-details">
+				<div class="styled-paragraph">
+					<div class="styled-section-header">
+						<div class="header-container">
+							<div class="company-header">
+								Heeter
+							</div>
 
-				<div class="styled-section-header">
-					SourceLink Carolina
+							<div class="date-header">
+								08/12 - 03/14
+							</div>
+						</div>
+					</div>
+
+					<br/>
+
+					<div>
+						Developed the entire back-end and helped to develop the front-end for Heeter's web-to-print / print-on-demand solution, ShopPRO - a division of HeeterPRO. This solution includes a JavaScript-enhanced client-facing web portal, SQL server utilization, two C# applications, and an ASP.NET credit card payment website.
+						<br/><br/>
+						Responsible for the data and source-code maintenance of a fulfillment project for a top health insurance organization - this project being the company's largest single source of revenue.
+						<br/><br/>
+						The main source of knowledge for the software suite used for all data housing, maintenance, and manipulation.
+						<br/><br/>
+						Helped to create and now maintain the company website - Heeter.com - using HTML, CSS, JavaScript, and DotNetNuke as the CMS.
+					</div>
 				</div>
 
-				<br/><br/>
+				<div class="styled-paragraph">
+					<br/><br/>
 
-				<div>
-					Designed, coded, debugged, documented, implemented, and maintained in-house data-centric GUI and console applications primarily geared towards direct-mail campaigns and their subsequent back-end tracking/reporting. These client-specific applications allowed for processes that could take hours of manual Data Processor intervention to be completed in a matter of minutes. Several applications even ran without any human interaction - i.e. a client would drop a file on an FTP site and the application would take it the rest of the way.
+					<div class="styled-section-header">
+						<div class="header-container">
+							<div class="company-header">
+								Classic Graphics
+							</div>
+
+							<div class="date-header">
+								06/10 - 08/12
+							</div>
+						</div>
+					</div>
+
+					<br/>
+
+					<div>
+						Co-lead an initiative to design a new Job Order Entry system for the Variable Data division of the company. I accomplished this by creating a highly-dynamic Excel document, built on top of 7,900 lines of VBA code. Some of the tasks/features accomplished in this were as follows:<br/><br/>
+
+						<ul style="text-align: left; ">
+							<li>
+								Significantly reduced the potential for human error.
+							</li>
+							<li>
+								Utilized the Principle of Least Privilege.
+							</li>
+							<li>
+								Decreased the amount of time for a job to be processed - from Planning to Production.
+							</li>
+							<li>
+								Increased QC accuracy and effectiveness, even while decreasing the number of QC "checkpoints".
+							</li>
+							<li>
+								Increased/enhanced the organization of needed information, and eliminated unneeded or redundant information.
+							</li>
+						</ul>
+
+						<br/>
+						Helped to define, create, and implement many of the data standards and infrastructure that lead to the company becoming ISO:27001 certified in June 2012.
+						<br/><br/>
+						When a large client's campaign requirements changed drastically, forcing us to use an outside vendor for a portion of their data work, I wrote an application to manage the relationship between our internal software and the outside vendor's software. Between the application and the implementation of new standards/procedures, automated jobs expected to be quick-turn were able to remain as such. All of this was accomplished weeks ahead of the clients requested implementation time-frame.
+						<br/><br/>
+						Wrote two separate applications to meet the extremely quick-turn demands of a large client. One of which built an intricate data report in Excel that encompassed several different points along the data-processing timeline for their jobs. The other populated the above mentioned Job Order Entry form, preparing it to be given to our Production department. For either process to be accomplished manually, because of the size and complexity of the client's jobs, took between 2 and 4 hours. Both applications accomplished the previously manual tasks in about 30 seconds, eliminated the potential for human error, and enabled us to meet the client's demanding schedule.
+					</div>
+				</div>
+
+				<div class="styled-paragraph">
 					<br/><br/>
-					Worked heavily with several different linear barcodes (Code 128, POSTNET, PLANET, Intelligent Mail Barcode) and 2d barcodes (DataMatrix, PDF417, QR Code). My experience includes correct barcode creation and acceptable content to ensure data integrity, proper printing to ensure scan-ability, and extensive possibilities for usage when scanned (including writing the needed technology to make use of scanned data).
-					<br/><br/>
-					Helped to transition several million dollars worth of work from our Chicago division to our Greenville division to reduce organizational expenses and increase profitability.
-					<br/><br/>
-					Some of the larger clients I did work for are GAP (including it's divisions Banana Republic, Old Navy, and Piperlime), Bank of America, Wachovia, RBC Insurance, and Securian Financial. I also did work for several public utilities offices (water and electric statements), and statements for tax purposes(1040, 1099, W-2, etc.) Subsequently, I am very familiar with intense marketing campaigns with tight deadlines, and strict security requirements for sensitive data.
+
+					<div class="styled-section-header">
+						<div class="header-container">
+							<div class="company-header">
+								SourceLink Carolina
+							</div>
+
+							<div class="date-header">
+								06/07 - 06/10
+							</div>
+						</div>
+					</div>
+
+					<br/>
+
+					<div>
+						Designed, coded, debugged, documented, implemented, and maintained in-house data-centric GUI and console applications primarily geared towards direct-mail campaigns and their subsequent back-end tracking/reporting. These client-specific applications allowed for processes that could take hours of manual Data Processor intervention to be completed in a matter of minutes. Several applications even ran without any human interaction - i.e. a client would drop a file on an FTP site and the application would take it the rest of the way.
+						<br/><br/>
+						Worked heavily with several different linear barcodes (Code 128, POSTNET, PLANET, Intelligent Mail Barcode) and 2d barcodes (DataMatrix, PDF417, QR Code). My experience includes correct barcode creation and acceptable content to ensure data integrity, proper printing to ensure scan-ability, and extensive possibilities for usage when scanned (including writing the needed technology to make use of scanned data).
+						<br/><br/>
+						Helped to transition several million dollars worth of work from our Chicago division to our Greenville division to reduce organizational expenses and increase profitability.
+						<br/><br/>
+						Some of the larger clients I did work for are GAP (including it's divisions Banana Republic, Old Navy, and Piperlime), Bank of America, Wachovia, RBC Insurance, and Securian Financial. I also did work for several public utilities offices (water and electric statements), and statements for tax purposes(1040, 1099, W-2, etc.) Subsequently, I am very familiar with intense marketing campaigns with tight deadlines, and strict security requirements for sensitive data.
+					</div>
 				</div>
 			</div>
-			
-			<!--
-			<span style="padding-left: 10px; ">
-				<%#= link_to 'Blog...', blogs_path, :class => 'btn btn-info btn-medium' %>
-			</span>
-			-->
 		</div>
 	</body>
 </html>
