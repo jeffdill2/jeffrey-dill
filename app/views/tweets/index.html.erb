@@ -2,14 +2,156 @@
 <html>
 	<head>
 		<%= provide(:title, 'Tweets') %>
+
+		<script type="text/javascript">
+			var imgorgH, imgorgW;
+			var modalON=false;
+			var imgTitle;
+
+			$(document).ready(function() {
+
+			  	$(window).resize(function(){
+			        $('.loader').css({
+			            'top':($(window).height()-$('.loader').outerHeight())/2+$(document).scrollTop(),
+			            'left':($(window).width()-$('.loader').outerWidth())/2+$(document).scrollLeft()
+			        });
+
+			        if(modalON) {
+			      		$('.modal').css({
+			      			'top':($(window).height()-$('.modal').outerHeight())/2+$(document).scrollTop(),
+			      			'left':($(window).width()-$('.modal').outerWidth())/2+$(document).scrollLeft()
+			      		});
+			        }
+			  	});
+				
+			    $(".image").click( function() {
+			         
+			        var clickedImg = $(this).find('img');
+			        imgTitle = $(this).next().text();
+
+			        var imgName = clickedImg.attr("alt");
+
+			        $(".loader").show();
+			        $(window).resize();
+
+			        if($('.enlarged-img').attr('src'))  {
+			            $('.enlarged-img').removeAttr('src');
+			        }
+			        $(".enlarged-img").attr("src",imgName);
+
+			        return false;
+			    });
+
+			    $(".enlarged-img").load(function()  {
+
+			        $(".loader").hide();
+
+			        modalOpen(400);
+			        positionImg();
+
+			    	  var w,h;
+			        w=$(this).width();
+			        h=$(this).height();
+
+			        $('.modal .image-title').text(imgTitle);
+			        $(".modal").css({'height':h,'width':w});
+			        $(window).resize();
+			        
+			    }).error(function () { 
+			        alert("Can't Load image.");
+			    });
+
+			    function realSize(){
+			        var orgImg = $('.enlarged-img');
+			        var newImg = new Image();
+			        newImg.src=orgImg.attr('src');
+			        imgorgH = newImg.height;
+			        imgorgW = newImg.width;
+			    }
+
+			    function positionImg()  {
+			        var windowH, windowW, minHdiff, minVdiff, diffH, diffV;
+			        var newW,newH;
+			        
+			        realSize();
+
+			        windowW = $(window).innerWidth();
+			        windowH = $(window).innerHeight();
+
+			        minHdiff = (windowW/10)*2;
+			        minVdiff = (windowH/10)*2;
+
+			        diffH = windowW - imgorgW;
+			        diffV = windowH - imgorgH;
+
+			        //calculate new width
+			        if((windowW-minHdiff)>=imgorgW)
+			          newW=imgorgW;
+			        else
+			          newW=(windowW-minHdiff);
+
+
+			        if((windowH-minVdiff)>=imgorgH)
+			          newH=imgorgH;
+			        else
+			          newH=(windowH-minVdiff);
+
+			       $(".enlarged-img").css({"width":"auto","height":"auto"});
+			       //auto adjust width or height if other changes in below code
+
+			       if(diffH<=minHdiff && diffV<=minVdiff) {
+			          if(diffH<=diffV) 
+			            $(".enlarged-img").css("width",newW);
+			          else
+			            $(".enlarged-img").css("height",newH);
+			       }
+			       else if(diffH<=minHdiff) //recalculate image width
+			       {
+			          $(".enlarged-img").css("width",newW);
+			       }
+			       else if(diffV<=minVdiff) //recalculate image height
+			       {
+			         $(".enlarged-img").css("height",newH);
+			       }
+
+			    }
+
+			    $(".modal").hover(function()  {
+			      $(".close").stop(true,true).fadeIn('fast');
+			    },function(){
+			      $(".close").stop(true,true).fadeOut('fast');
+			    });
+
+			    $('.modal-bg').click(function() {
+			    	modalClose(400);
+			    });
+
+			    $('.close').click(function()  {
+			      modalClose(400);
+			      return false;
+			    });
+
+			    function modalOpen(delay) {
+			      modalON=true;
+			    	$('.modal-bg').stop().fadeIn(delay/2);
+			      $('.modal').css({'opacity':0,'display':'block'});
+			    	$('.modal').stop().delay(delay/2).animate({'opacity':1},delay);
+			    }
+
+			    function modalClose(delay)  {
+			        $('.modal').stop().fadeOut(delay/2);
+			        $('.modal-bg').stop().delay(delay/2).fadeOut(delay,function(){
+			             $('.modal').removeAttr('style');
+			             $('.modal-bg').removeAttr('style');
+			            modalON=false;
+			        });
+			    }
+			});
+		</script>
 	</head>
 
 	<div class="tweets-body">
 		<% @tweets.each do |tweet| %>
-			<div style="background-color:yellow;border:1px solid black;display:none;width:200px;height:200px;" id="<%= tweet_id(tweet) %>">
-				<%= image_tag tweet_url(tweet) %>
-			</div>
-
 			<div class="tweet-container span3 float">
 				<div class="tweet-text">
 					<%= tweet_text(tweet) %>
@@ -17,10 +159,21 @@
 
 				<br/>
 
-				<div>
-					<a href="#" onClick="Popup.show('<%= tweet_id(tweet) %>'); return false; "><%= image_tag tweet_url(tweet) %></a>
-				</div>
+				<ul class="gallery">
+					<li>
+						<%= link_to image_tag(tweet_url(tweet), :alt => tweet_url(tweet)), "", :class => "image" %>
+					</li>
+				</ul>
 			</div>
 		<% end %>
 	</div>
+
+	<div class="modal-bg"></div>
+	
+	<div class="modal">
+		<a href="" class="close"></a>
+		<img class="enlarged-img">
+	</div>
+
+	<span class="loader"><%= image_tag "loader.gif", :alt => "Loading..." %></span>
 </html>
